@@ -1,0 +1,148 @@
+/*-----css movie site -----*/
+@font-face {
+  font-family: "Ghibli";
+  src: url(Eyad\ Al-Samman\ -\ Ghibli.otf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.2s;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  overflow: hidden;
+  overflow-y: scroll;
+  background: #d0ffc9;
+  background-image: url(./../images/Background2.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 100%;
+}
+
+#currentPage {
+  text-decoration: underline white 2px;
+  text-underline-offset: 7px;
+  font-family: "Ghibli";
+}
+
+.headers {
+  color: #013e48;
+  font-weight: 500;
+  padding: 20px 100px;
+  /* margin-left: 10%; */
+  font-size: x-large;
+  text-decoration: underline;
+  text-underline-offset: 13px;
+  text-decoration-color: #013e48;
+  top: 25%;
+  left: 0;
+  font-family: "Ghibli";
+}
+
+section {
+  margin-top: 10%;
+}
+
+section .movie-card-section {
+  /* background:#f40000; */
+  padding: 20px 100px;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 50px;
+  padding-top: 50px;
+  border-radius: 10px;
+}
+
+section .movie-card-section .card {
+  margin-bottom: 20px;
+  color: #013e48;
+  text-transform: uppercase;
+  width: 250px;
+  /* 
+  -webkit-text-stroke-width: 0.3px; */
+  /* -webkit-text-stroke-color: #33b0de; */
+}
+
+section .movie-card-section .card img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 0 30px #000;
+}
+
+section .movie-card-section .card .card-content .movie-name {
+  font-size: 18px;
+  margin-top: 10px;
+  font-family: "Ghibli";
+  text-align: center;
+}
+
+section .movie-card-section .card .card-content .movie-info {
+  font-size: 0.95em;
+  margin-top: 10px;
+}
+
+section .movie-card-section .card .card-content .movie-info span {
+  color: #666;
+}
+
+section .movie-card-section .card .card-content .movie-info .d3 {
+  background: #33b0de;
+  border-radius: 50%;
+  font-size: 0.5em;
+  color: #146fef;
+  padding: 3px;
+  margin-left: 3px;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: white;
+}
+
+section .show {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  /* background: #111; */
+  padding: 10px 100px;
+  padding-bottom: 40px;
+}
+
+section .show .show-bar {
+  background: #fff;
+  width: 100%;
+  height: 4px;
+  border-radius: 50px;
+  overflow: hidden;
+}
+.editmovie {
+  border: none;
+  outline: none;
+  width: 80px;
+  padding: 15px 0;
+  font-size: 15px;
+  border-radius: 50px;
+  background: #33b0de;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: inset 0 0 50px #146fef;
+}
+.addmovie {
+  border: none;
+  outline: none;
+  width: 300px;
+  padding: 15px 0;
+  font-size: 1em;
+  border-radius: 50px;
+  background: #33b0de;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: inset 0 0 50px #146fef;
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Login</title>
+    <!-- Fontawesome CDN Link For Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <!---Custom CSS File--->
+    <link rel="stylesheet" href="./../styles/login.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="login form">
+        <header>Login</header>
+        <form action="login.php" method="POST">
+          <div class="radio-box">
+            <div class="customer-radio-box">
+              <input
+                type="radio"
+                class="btn-check"
+                name="options-base"
+                id="option5"
+                autocomplete="off"
+                checked
+              />
+              <label class="btn" for="option5">Customer</label>
+            </div>
+            <div class="admin-radio-box">
+              <input
+                type="radio"
+                class="btn-check"
+                name="options-base"
+                id="option6"
+                autocomplete="off"
+              />
+              <label class="btn" for="option6">Admin</label>
+            </div>
+          </div>
+          <div class="form-group email">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="Enter your email address"
+              name="emailAddress"
+            />
+          </div>
+          <div class="form-group password">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter your password"
+              name="password"
+            />
+            <i id="pass-toggle-btn" class="fa-solid fa-eye-slash"></i>
+          </div>
+          <a href="">Forgot password?</a>
+          <input type="submit" class="button" value="Login" />
+          <a href="../index.html"
+            ><input type="button" class="button" value="Cancel"
+          /></a>
+        </form>
+        <div class="signup">
+          <span class="signup"
+            >Don't have an account?
+            <a href="registration.html">Signup</a>
+          </span>
+        </div>
+      </div>
+    </div>
+    <script src="./../validations/login.js"></script>
+  </body>
+</html>

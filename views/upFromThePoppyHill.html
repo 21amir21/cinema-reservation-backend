@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!---font icon CDN----->
+
+    <link rel="stylesheet" href="../includes/header.css" />
+    <link rel="stylesheet" href="../includes/footer.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(function () {
+        $("#header").load("../includes/header.html");
+        $("#footer").load("../includes/footer.html");
+      });
+    </script>
+    <link rel="stylesheet" href="./../styles/upFromThePoppyHill.css" />
+    <title>Up From The Poppy Hill</title>
+  </head>
+
+  <body>
+    <div id="header"></div>
+    <div id="page-content">
+      <div id="tooltip">
+        <div id="tooltip-content">
+          <!-- TOOLTIP IMAGE -->
+          <img src="./../images/upFromThePoppyHill.jpg" />
+          <text id="title">From Up On Poppy Hill</text><br />
+          <div id="under-title">
+            <text>2011</text>
+            <text>7+</text>
+            <text>1 h 31 m</text>
+            <text>Language: Japanese</text>
+            <hr />
+          </div>
+          <!-- TOOLTIP GENRE -->
+          <div id="genre-box">
+            <text>Melodrama</text>
+            <text>Romance</text>
+            <text>Coming-of-age</text>
+          </div>
+          <!-- TOOLTIP RATING -->
+          <span id="rating">
+            <text>4.8</text>
+            <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+            <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+            <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+            <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+            <i class="fa fa-star-half-o fa-2x" aria-hidden="true"></i>
+          </span>
+
+          <!-- TOOLTIP MOVIE DESCRIPTION -->
+          <h5>Director: Gorō Miyazaki</h5>
+          <p id="description">
+            The movie is based on the 1980 serialized manga of the same name
+            illustrated by Chizuru Takahashi and written by Tetsurō Sayama. Set
+            in 1963 Yokohama, Japan, the film tells the story of Umi Matsuzaki,
+            a high school girl living in her grandmother's boarding house called
+            "Coquelicot Manor". When Umi meets Shun Kazama, a member of the
+            school's newspaper club, they decide to clean up the school's
+            clubhouse, Quartier Latin. However, Tokumaru, the chairman of the
+            local high school and a businessman, intends to demolish the
+            building for redevelopment and Umi and Shun, along with Shirō
+            Mizunuma, must persuade him to reconsider.
+          </p>
+        </div>
+      </div>
+      <div id="details">
+        <div id="genre">
+          <text><b>Genre:</b> Melodrama, Romance, Coming-of-age</text>
+          <text><b>Running Time:</b> 91 min</text>
+          <text><b>Release Date:</b> </text>
+          <text><b>Language:</b> Japanese</text>
+          <text><b>Subtitles:</b> English</text>
+        </div>
+        <div id="show-times">
+          <i class="fa fa-video-camera fa-2x" aria-hidden="true"> Show Times</i>
+          <i class="fa fa-ticket" aria-hidden="true">9:00 am</i>
+          <i class="fa fa-ticket" aria-hidden="true">12:00 pm</i>
+          <i class="fa fa-ticket" aria-hidden="true">15:00 pm</i>
+        </div>
+      </div>
+      <div id="trailer">
+        <!-- INSERT TRAILER HERE -->
+        <video
+          width="100%"
+          height="100%"
+          controls
+          poster="./../images/bannerUpFromThePoppyHill.jpg"
+        >
+          <source src="./../videos/OnPoppyHillOfficial.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div id="button-line">
+        <hr />
+        <a href="./seat-selection.html"><button>Buy Your Ticket</button></a>
+      </div>
+    </div>
+    <div id="footer"></div>
+    <!-- <div style="top: 1080px; position: relative; justify-content: center"> -->
+    <!-- </div> -->
+  </body>
+</html>

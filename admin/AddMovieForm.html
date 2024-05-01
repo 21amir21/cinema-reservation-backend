@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./AddMovieForm.css" />
+    <title>AddMovie</title>
+  </head>
+
+  <body>
+    <form id="submit-form" action="./AdminMovieDashboard.html">
+      <h2>Add Movie Details</h2>
+      <div class="form-group">
+        <label for="poster">Movie Poster</label>
+        <input type="file" id="poster" />
+      </div>
+      <div class="form-group">
+        <label for="trailer">Movie Trailer</label>
+        <input type="file" id="trailer" />
+      </div>
+      <div class="form-group">
+        <label for="moviename">Movie Name</label>
+        <input type="text" id="moviename" placeholder="Enter Movie Name" />
+      </div>
+      <div class="form-group">
+        <label for="releasedate">Release Date</label>
+        <input
+          type="date"
+          id="releasedate"
+          placeholder="Enter Movie Release Date"
+        />
+      </div>
+      <div class="form-group">
+        <label for="genre">Genre</label>
+        <input type="text" id="genre" placeholder="Enter Movie Genre" />
+      </div>
+      <div class="form-group">
+        <label for="rating">Rating</label>
+        <input type="text" id="rating" placeholder="Enter Movie Rating" />
+      </div>
+      <div class="form-group">
+        <label for="runningtime">Running Time</label>
+        <input
+          type="time"
+          id="runningtime"
+          placeholder="Enter Movie Running Time"
+        />
+      </div>
+      <div class="form-group">
+        <label for="language">Language</label>
+        <select id="language">
+          <option value="English">English</option>
+          <option value="Japanese">Japanese</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="subtitles">Subtitles</label>
+        <input type="text" id="subtitles" placeholder="Subtitles Avaliable" />
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea
+          id="description"
+          cols="100"
+          rows="7"
+          placeholder="Movie Description"
+        ></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="showtime1">ShowTimes</label>
+        <input type="datetime-local" id="showtime1" placeholder="Showtime 1" />
+        <input type="datetime-local" id="showtime2" placeholder="Showtime 2" />
+        <input type="datetime-local" id="showtime3" placeholder="Showtime 3" />
+      </div>
+
+      <div class="form-group confirm_details-btn">
+        <input type="submit" value="Confirm Movie Details" id="confirm-btn" />
+      </div>
+      <div class="form-group confirm_details-btn">
+        <a href="./AdminMovieDashboard.html"
+          ><input type="button" value="Cancel" id="cancel-btn"
+        /></a>
+      </div>
+    </form>
+
+    <script src="../validations/AddMovieForm.js"></script>
+  </body>
+</html>

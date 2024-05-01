@@ -1,0 +1,100 @@
+/*-----css movie site -----*/
+@font-face {
+  font-family: "Ghibli";
+  src: url(./../fonts/Eyad\ Al-Samman\ -\ Ghibli.otf);
+}
+body {
+  margin: 0px;
+  border: 0px;
+  background-image: url(./../images/Background2.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  font-family: "Ghibli";
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
+#main-container a {
+  align-self: center;
+}
+#screen {
+  align-content: center;
+  height: 20px;
+  width: 800px;
+  border: 15px solid black;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  border-radius: 50%;
+  text-align: center;
+  align-self: center;
+  color: white;
+  /* background: rgb(0, 0, 0); */
+}
+#seats-container {
+  height: 500px;
+  width: 700px;
+  /* border: 2px solid #aaa; */
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.8);
+  margin-top: 20px;
+  align-self: center;
+  padding: 15px;
+  /* box-sizing: border-box; */
+  background-color: rgb(180, 214, 251);
+  /* background-blend-mode: lighten; */
+}
+.seats {
+  height: 35px;
+  width: 35px;
+  border: 1px solid white;
+  border-radius: 2px 5px 0px 5px;
+  margin-bottom: 50px;
+  background-color: black;
+  transition: background 0.3s;
+}
+.seats:hover {
+  border: 1px solid rgb(93, 93, 93);
+  box-shadow: 2px 2px 2px white, 2px -2px 2px white, -2px 2px 2px white,
+    -2px -2px 2px white;
+  background: #4da0ff;
+}
+.seats.selected {
+  background-color: #146fef;
+  opacity: 0.8;
+  border: 2px solid #0066f5;
+  box-shadow: 2px 2px 2px #66a4fc, 2px -2px 2px #4b96ff, -2px 2px 2px #2f85fe,
+    -2px -2px 2px #559afb;
+}
+#row0,
+#row1,
+#row2,
+#row3,
+#row4,
+#row5 {
+  display: flex;
+  justify-content: space-between;
+}
+.book {
+  font-family: "Ghibli";
+  margin-top: 30px;
+  height: 50px;
+  width: 200px;
+  font-size: 20px;
+  color: white;
+  background: #33b0de;
+  box-shadow: inset 0 0 50px #146fef;
+  border: none;
+  border-radius: 15px;
+  transition: color 0.3s, background 0.3s;
+}
+.book:hover {
+  color: white;
+  background: #338bde;
+  box-shadow: inset 0 0 50px #0069fbac;
+}

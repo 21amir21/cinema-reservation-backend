@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/contact-us.css" />
+    <title>Contact Us</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="contact form">
+        <h2>Contact Us</h2>
+        <p id="thankYouMessage">
+          Thank you for using our website. If you have any questions or require
+          support then please contact us using the form bellow.
+        </p>
+        <form action="../index.html">
+          <div>
+            <input
+              type="text"
+              placeholder="Enter your name"
+              id="name"
+              class="noError"
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              placeholder="Enter your email"
+              id="email"
+              class="noError"
+            />
+          </div>
+          <div>
+            <textarea
+              cols="30"
+              rows="10"
+              placeholder="Enter your message"
+              id="message"
+              class="noError"
+            ></textarea>
+          </div>
+          <div class="buttonContainer">
+            <a href="/" class="button">Cancel</a>
+            <input type="submit" class="button" value="Submit" />
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="./../validations/contact.js"></script>
+  </body>
+</html>

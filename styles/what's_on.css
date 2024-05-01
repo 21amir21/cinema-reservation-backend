@@ -1,0 +1,375 @@
+/*-----css movie site -----*/
+@font-face {
+  font-family: "Ghibli";
+  src: url(./../fonts/Eyad\ Al-Samman\ -\ Ghibli.otf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.2s;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  overflow: hidden;
+  overflow-y: scroll;
+  background-image: url(./../images/Background2.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 100%;
+  min-width: 700px;
+}
+
+/* #currentPage {
+  text-decoration: underline white 2px;
+  text-underline-offset: 7px;
+  font-family: "Ghibli";
+} */
+
+.headers {
+  color: #013e48;
+  font-weight: 500;
+  padding: 20px 100px;
+  font-size: x-large;
+  text-decoration: underline;
+  text-underline-offset: 13px;
+  text-decoration-color: #013e48;
+  top: 25%;
+  left: 0;
+  font-family: "Ghibli";
+}
+
+section {
+  margin-top: 10%;
+  min-width: 50px;
+}
+
+section .movie-card-section {
+  /* background:#f40000; */
+  padding: 20px 100px;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 50px;
+  padding-top: 50px;
+  border-radius: 10px;
+}
+
+section .movie-card-section .card {
+  margin-bottom: 20px;
+  color: #013e48;
+  text-transform: uppercase;
+  width: 250px;
+  position: relative;
+
+  /* 
+  -webkit-text-stroke-width: 0.3px; */
+  /* -webkit-text-stroke-color: #33b0de; */
+}
+
+section .movie-card-section .card img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 0 30px #000;
+}
+
+section a {
+  text-decoration: none;
+  color: #013e48;
+}
+
+section .movie-card-section .card .card-content .movie-name {
+  font-size: 18px;
+  margin-top: 10px;
+  font-family: "Ghibli";
+  text-align: center;
+}
+
+section .movie-card-section .card .card-content .movie-info {
+  font-size: 0.95em;
+  margin-top: 10px;
+}
+
+section .movie-card-section .card .card-content .movie-info span {
+  color: #666;
+}
+
+section .show {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  /* background: #111; */
+  padding: 10px 100px;
+  padding-bottom: 40px;
+}
+
+section .show .show-bar {
+  background: #fff;
+  width: 100%;
+  height: 4px;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+section .show .show-bar .bar {
+  width: 50%;
+  height: inherit;
+  background: #33b0de;
+  border-radius: 50px;
+}
+
+section .show button {
+  border: none;
+  outline: none;
+  width: 300px;
+  padding: 15px 0;
+  font-size: 1em;
+  border-radius: 50px;
+  background: #33b0de;
+  box-shadow: inset 0 0 50px #146fef;
+  color: #fff;
+  cursor: pointer;
+}
+
+section .show button:hover {
+  background: #338bde;
+  box-shadow: inset 0 0 50px #0069fbac;
+}
+
+/* ----------TOOLTIP STUFF-------- */
+#tooltip {
+  position: absolute;
+  background: #33b0de;
+  box-shadow: inset 0 0 1000px #146fef;
+  width: 125%;
+  height: 100%;
+  left: 110%;
+  top: -5%;
+  z-index: 1;
+  border-radius: 10px;
+}
+
+#tooltip::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  right: 100%; /* To the left of the tooltip */
+  margin-top: -5px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent #258ff9 transparent transparent;
+  /* box-shadow: inset 0 0 50px #146fef; */
+}
+
+#tooltip-content {
+  width: 90%;
+  margin: 10%;
+}
+
+#tooltip img {
+  position: absolute;
+  width: 40%;
+  height: 40%;
+}
+
+#tooltip #rating .fa {
+  /* transform: scale(5); */
+  /* color: rgb(255, 228, 73); */
+  color: white;
+  position: relative;
+  top: 180px;
+  left: inherit;
+}
+
+#tooltip #rating text {
+  position: relative;
+  top: 178px;
+  left: 5px;
+  font-size: medium;
+  font-weight: bold;
+  font-family: "Ghibli";
+  /* color: rgb(255, 228, 73); */
+  color: white;
+}
+
+#tooltip text {
+  position: relative;
+  top: 170px;
+  /* border-bottom: solid 2px black; */
+  font-family: "Ghibli";
+  color: white;
+}
+
+#tickets {
+  position: absolute;
+  top: 30px;
+  right: 0%;
+  width: 40%;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  height: 40%;
+  justify-content: center;
+  float: right;
+  display: grid;
+  border: dashed 1px white;
+  border-radius: 5px;
+}
+
+#tickets .fa {
+  top: 5px;
+  position: relative;
+  color: white;
+}
+
+#tickets .ticket-text {
+  font-family: "Ghibli";
+  margin-top: 0.8em;
+  left: -50px;
+  font-size: 15px;
+  z-index: 2;
+  color: white;
+}
+
+#genre-box {
+  position: relative;
+  top: 25px;
+  margin-right: 10%;
+  font-family: "Ghibli";
+  font-size: x-small;
+  color: white;
+  display: flex;
+  align-content: space-evenly;
+  gap: 6px;
+}
+
+#genre-box text {
+  padding: 5px;
+  border: solid 1px white;
+  border-radius: 20px;
+}
+
+/* Tooltip Description */
+#tooltip p {
+  font-family: "Ghibli";
+  font-size: x-small;
+  position: relative;
+  top: 215px;
+  color: white;
+  word-spacing: 5px;
+}
+
+/* The Button Up Part */
+
+.back-to-top {
+  position: fixed;
+  bottom: -40px;
+  right: 40px;
+  display: block;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  background: #335dff;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  opacity: 0;
+  -webkit-transform: scale(0.3);
+  -ms-transform: scale(0.3);
+  transform: scale(0.3);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 9;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.back-to-top:focus {
+  color: #fff;
+}
+.back-to-top.show {
+  bottom: 40px;
+  right: 40px;
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+.back-to-top.show:hover {
+  color: #fff;
+  bottom: 30px;
+  opacity: 1;
+}
+.arrow {
+  background-image: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PHN0eWxlPi5zdDB7ZmlsbDojZmZmfTwvc3R5bGU+PHBhdGggY2xhc3M9InN0MCIgZD0iTTMxOS4xIDIxN2MyMC4yIDIwLjIgMTkuOSA1My4yLS42IDczLjdzLTUzLjUgMjAuOC03My43LjZsLTE5MC0xOTBjLTIwLjEtMjAuMi0xOS44LTUzLjIuNy03My43UzEwOSA2LjggMTI5LjEgMjdsMTkwIDE5MHoiLz48cGF0aCBjbGFzcz0ic3QwIiBkPSJNMzE5LjEgMjkwLjVjMjAuMi0yMC4yIDE5LjktNTMuMi0uNi03My43cy01My41LTIwLjgtNzMuNy0uNmwtMTkwIDE5MGMtMjAuMiAyMC4yLTE5LjkgNTMuMi42IDczLjdzNTMuNSAyMC44IDczLjcuNmwxOTAtMTkweiIvPjwvc3ZnPg==);
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-size: contain;
+  transform: rotate(-90deg);
+  top: 30%;
+  left: 40%;
+}
+.arrow:nth-child(2) {
+  top: 42%;
+}
+
+@keyframes bounceAlpha {
+  0% {
+    opacity: 1;
+    transform: rotate(-90deg) translateX(0px) scale(1);
+  }
+  25% {
+    opacity: 0;
+    transform: rotate(-90deg) translateX(10px) scale(0.9);
+  }
+  26% {
+    opacity: 0;
+    transform: rotate(-90deg) translateX(-10px) scale(0.9);
+  }
+  55% {
+    opacity: 1;
+    transform: rotate(-90deg) translateX(0px) scale(1);
+  }
+}
+
+.back-to-top:hover .arrow {
+  animation-name: bounceAlpha;
+  animation-duration: 1.4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.back-to-top:hover .arrow:nth-child(2) {
+  animation-name: bounceAlpha;
+  animation-duration: 1.4s;
+  animation-delay: 0.2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@media only screen and (max-width: 575px) {
+  .back-to-top {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+  }
+  .back-to-top.show {
+    bottom: 10px;
+    right: 10px;
+  }
+  .back-to-top.show:hover {
+    bottom: 10px;
+  }
+  .arrow {
+    top: 27%;
+    left: 37%;
+  }
+}

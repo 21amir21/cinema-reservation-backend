@@ -1,0 +1,34 @@
+{
+  "name": "cinemareservationsystem",
+  "version": "1.0.0",
+  "description": "This project is a Cinema Reservation System built to help users reserve seats for their favorite movies in a convenient and efficient manner.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "sass": "node-sass public/styles/accountMenu.scss dist/accountMenu.css",
+    "watch:sass": "npm run sass -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CordialBeatle0/CinemaReservationSystem.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CordialBeatle0/CinemaReservationSystem/issues"
+  },
+  "homepage": "https://github.com/CordialBeatle0/CinemaReservationSystem#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "node-sass": "^9.0.0",
+    "sass": "^1.74.1"
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false
+  }
+}
