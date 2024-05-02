@@ -1,4 +1,8 @@
 <?php
+
+require __DIR__ . "/validate.php";
+session_start();
+
 $hostName = "localhost";
 $userName = "root";
 $password = "2121";
@@ -20,10 +24,14 @@ $email = mysqli_real_escape_string($conn, $email);
 $message = mysqli_real_escape_string($conn, $message);
 
 // get customer id from the cookies and put it in the customerId variable
-$customerId = $_SESSION["customer"]["id"];
-$sql = "INSERT INTO inquiry(customerId, message) VALUES('$customerId', '$message')";
+if (isset($_SESSION["customer"])) {
+  $customerId = $_SESSION["customer"]["customerID"];
+  $sql = "INSERT INTO inquiry(customerId, message) VALUES($customerId, '$message')";
+} else {
+  $sql = "INSERT INTO inquiry(customerId, message) VALUES(null, '$message')";
+}
 
 $conn->query($sql);
 
 $conn->close();
-header("Location: login.html");
+header("Location: /");
