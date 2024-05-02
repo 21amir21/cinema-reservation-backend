@@ -38,9 +38,9 @@ session_start();
       <li><a href="/">Home</a></li>
       <!-- <li><a href="/views/what's_on.html">Movies</a></li> -->
       <li class="nav-item dropdown">
-        <a href="/views/what's_on.html" class="nav-link dropdown-toggle">Movies</a>
+        <a href="/views/what's_on.php" class="nav-link dropdown-toggle">Movies</a>
         <ul class="dropdown-menu">
-          <li><a href="/views/what's_on.html">What's On</a></li>
+          <li><a href="/views/what's_on.php">What's On</a></li>
           <li><a href="/views/comingSoon.html">Coming Soon</a></li>
         </ul>
       </li>

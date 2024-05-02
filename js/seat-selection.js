@@ -8,7 +8,10 @@ for (let seat of seats) {
   seat.addEventListener("click", function (e) {
     e.preventDefault();
     let isClicked = seat.getAttribute("isClicked");
-    console.log(seat, isClicked);
+    let isBooked = seat.classList.contains("booked");
+    if (isBooked) {
+      return;
+    }
     if (isClicked === "false") {
       seat.setAttribute("isClicked", true);
       seat.classList.add("selected");
