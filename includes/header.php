@@ -44,7 +44,7 @@ session_start();
           <li><a href="/views/comingSoon.html">Coming Soon</a></li>
         </ul>
       </li>
-      <li><a href="/views/offers.html">Offers</a></li>
+      <li><a href="/views/offers.php">Offers</a></li>
       <li><a href="/views/contact-us.html">Contact Us</a></li>
     </ul>
     <!-- <div class="sign-in-up">
