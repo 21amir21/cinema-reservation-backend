@@ -1,28 +1,26 @@
-// javascript for showing movie tooltip on card hover (on up from the poppy hill card)
 const myDiv = document.getElementsByClassName("activate");
-for (let movie of myDiv) {
-  myDiv.addEventListener("mouseover", function (e) {
-    e.preventDefault();
-    movie.style.display = "block";
+
+for (let i = 0; i < myDiv.length; i++) {
+  myDiv[i].addEventListener("mouseover", function () {
+    const tooltip = document.querySelectorAll(".tooltip").item(i);
+    tooltip.style.display = "block";
   });
-  myDiv.addEventListener("mouseout", function (e) {
-    e.preventDefault();
-    movie.style.display = "none";
+  myDiv[i].addEventListener("mouseout", function () {
+    const tooltips = document.querySelectorAll(".tooltip").item(i);
+    tooltips.style.display = "none";
   });
 }
 
-// window.onload = function () {
-//   hideTooltip();
-// };
+function hideTooltip(i) {
+  const tooltips = document.querySelectorAll(".tooltip").item(i);
+  tooltips.style.display = "none";
+}
 
-// function hideTooltip() {
-//   const tooltip = document.querySelector(".tooltip");
-//   tooltip.style.display = "none";
-// }
-// function showTooltip() {
-//   const tooltip = document.querySelector(".tooltip");
-//   tooltip.style.display = "block";
-// }
+window.onload = function () {
+  for (let i = 0; i < myDiv.length; i++) {
+    hideTooltip(i);
+  }
+};
 
 // jQuery for show more and show less button
 if ($(".card").length > 8) {

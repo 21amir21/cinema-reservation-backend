@@ -48,10 +48,10 @@
             <p class="movie-name"> <?php echo $movie['name']; ?></p>
           </a>
           <!-- ToolTip For Movie -->
-          <span class="tooltip" style="display: none;">
+          <span class="tooltip">
             <div class="tooltip-content">
               <!-- TOOLTIP IMAGE -->
-              <img src="<?php echo $movie['postersURL']; ?>" />
+              <img style="width: 40%;height:40%;" src="<?php echo $movie['postersURL']; ?>" />
               <text><?php echo $movie['name']; ?></text><br />
               <!-- TOOLTIP RATING -->
               <span class="rating">
