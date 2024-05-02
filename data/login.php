@@ -36,9 +36,14 @@ if (empty($emailAddress)) {
 
             // Successufull Login!
 
-            $_SESSION["firstName"] = $row["firstName"];
-            $_SESSION["email"] = $row["email"];
             $_SESSION["id"] = $row["id"];
+            $_SESSION["firstName"] = $row["firstName"];
+            $_SESSION["lastName"] = $row["lastName"];
+            $_SESSION["email"] = $row["email"];
+            $_SESSION["password"] = $row["password"];
+            $_SESSION["gender"] = $row["gender"];
+            $_SESSION["dob"] = $row["dob"];
+
 
             $_SESSION["customer"] = [
                 "customerName" => $row["firstName"],

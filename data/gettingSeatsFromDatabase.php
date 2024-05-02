@@ -1,7 +1,4 @@
 <?php
-
-
-
 function gettingSeatsFromDatabase($theaterID)
 {
   $hostName = "localhost";

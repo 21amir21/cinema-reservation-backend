@@ -1,4 +1,7 @@
 <?php
+
+require __DIR__ . "/validate.php";
+
 $hostName = "localhost";
 $userName = "root";
 $password = "2121";
