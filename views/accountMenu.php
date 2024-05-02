@@ -79,15 +79,15 @@
         <h2>Update Personal Information</h2>
         <div class="form-group fullname">
           <label for="fullname">First Name</label>
-          <input type="text" id="fullname" placeholder="Enter your first name" name="firstName" value=<?= $_SESSION["firstName"] ?> />
+          <input type="text" id="fullname" placeholder="Enter your first name" name="firstName" value="<?= $_SESSION["firstName"] ?? '' ?>" />
         </div>
         <div class="form-group fullname">
           <label for="fullname">Last Name</label>
-          <input type="text" id="fullname" placeholder="Enter your last name" name="lastName" value=<?= $_SESSION["lastName"] ?> />
+          <input type="text" id="fullname" placeholder="Enter your last name" name="lastName" value="<?= $_SESSION["lastName"] ?? '' ?>" />
         </div>
         <div class="form-group email">
           <label for="email">Email Address</label>
-          <input type="text" id="email" placeholder="Enter your email address" name="email" value=<?= $_SESSION["email"] ?> />
+          <input type="text" id="email" placeholder="Enter your email address" name="email" value="<?= $_SESSION["email"] ?? '' ?>" />
         </div>
         <div class="form-group password">
           <label for="password">New Password</label>
@@ -101,7 +101,7 @@
         </div>
         <div class="form-group date">
           <label for="date">Birth Date</label>
-          <input type="date" id="date" placeholder="Select your date" name="dob" value=<?= $_SESSION["dob"] ?> />
+          <input type="date" id="date" placeholder="Select your date" name="dob" value="<?= $_SESSION["dob"] ?? '' ?>" />
         </div>
         <br />
         <div class="payment-form">
