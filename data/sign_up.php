@@ -13,6 +13,14 @@ $password = $_POST["password"];
 $dob = $_POST["dob"];
 $gender = $_POST["gender"];
 
+// calling the validate function
+$firstName = validate($firstName);
+$lastName = validate($lastName);
+$emailAddress = validate($emailAddress);
+$password = validate($password);
+$dob = validate($dob);
+$gender = validate($gender);
+
 // Escape variables to protect against SQL injection
 $firstName = mysqli_real_escape_string($conn, $firstName);
 $lastName = mysqli_real_escape_string($conn, $lastName);
@@ -22,6 +30,7 @@ $dob = mysqli_real_escape_string($conn, $dob);
 $gender = mysqli_real_escape_string($conn, $gender);
 
 $sql = "INSERT INTO customer(firstName, lastName, email, password, gender, dob) VALUES('$firstName', '$lastName', '$emailAddress', '$password', '$gender', '$dob')";
+
 $conn->query($sql);
 
 
