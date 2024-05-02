@@ -57,6 +57,7 @@ session_start();
       $firstName = $_SESSION['customer']['customerName'];
       // Display welcome message with the user's name
       echo "<p>Welcome, $firstName</p>";
+      echo '<a href="/data/logout.php"><button class="login-btn">Logout</button></a>';
     } else {
       // Display login and sign up buttons
       echo '<div class="sign-in-up">
