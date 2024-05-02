@@ -60,16 +60,20 @@ body {
 }
 .seats:hover {
   border: 1px solid rgb(93, 93, 93);
-  box-shadow: 2px 2px 2px white, 2px -2px 2px white, -2px 2px 2px white,
-    -2px -2px 2px white;
+  box-shadow: 2px 2px 2px white, 2px -2px 2px white, -2px 2px 2px white, -2px -2px 2px white;
   background: #4da0ff;
 }
 .seats.selected {
   background-color: #146fef;
   opacity: 0.8;
   border: 2px solid #0066f5;
-  box-shadow: 2px 2px 2px #66a4fc, 2px -2px 2px #4b96ff, -2px 2px 2px #2f85fe,
-    -2px -2px 2px #559afb;
+  box-shadow: 2px 2px 2px #66a4fc, 2px -2px 2px #4b96ff, -2px 2px 2px #2f85fe, -2px -2px 2px #559afb;
+}
+.seats.booked {
+  background-color: #333;
+  opacity: 0.8;
+  border: 2px solid #000;
+  box-shadow: 2px 2px 2px #666, 2px -2px 2px #444, -2px 2px 2px #222, -2px -2px 2px #555;
 }
 #row0,
 #row1,
