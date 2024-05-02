@@ -9,7 +9,7 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
     $(function() {
-      $("#header").load("../includes/header.html");
+      $("#header").load("../includes/header.php");
       $("#footer").load("../includes/footer.html");
     });
   </script>

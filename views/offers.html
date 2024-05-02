@@ -1,91 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Offers</title>
-    <link rel="stylesheet" href="../styles/offers.css" />
-    <link rel="stylesheet" href="../includes/header.css" />
-    <link rel="stylesheet" href="../includes/footer.css" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-      $(function () {
-        $("#header").load("../includes/header.html");
-        $("#footer").load("../includes/footer.html");
-        // The Button Up
-        var btn = $("#backToTop");
-        $(window).on("scroll", function () {
-          if ($(window).scrollTop() > 300) {
-            btn.addClass("show");
-          } else {
-            btn.removeClass("show");
-          }
-        });
-        btn.on("click", function (e) {
-          e.preventDefault();
-          $("html, body").animate(
-            {
-              scrollTop: 0,
-            },
-            500
-          );
-        });
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Offers</title>
+  <link rel="stylesheet" href="../styles/offers.css" />
+  <link rel="stylesheet" href="../includes/header.css" />
+  <link rel="stylesheet" href="../includes/footer.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(function () {
+      $("#header").load("../includes/header.php");
+      $("#footer").load("../includes/footer.html");
+      // The Button Up
+      var btn = $("#backToTop");
+      $(window).on("scroll", function () {
+        if ($(window).scrollTop() > 300) {
+          btn.addClass("show");
+        } else {
+          btn.removeClass("show");
+        }
       });
-    </script>
-  </head>
-  <body>
-    <div id="header"></div>
-    <a href="javascript:void(0);" id="backToTop" class="back-to-top">
-      <i class="arrow"></i><i class="arrow"></i>
-    </a>
-    <div class="contentContainer">
-      <h1 id="headers">Offers</h1>
-      <br /><br />
-      <div class="offerContainer">
-        <img
-          src="../images/RamadanOffer.jpg"
-          alt="Picture of Ramadan in relation to the offer"
-        />
-        <h2>Ramadan Offer</h2>
-        <p>
-          Immerse yourself in the joy of Ramadan evenings with our exclusive
-          Ramadan Nights offer at Pazas Cinema. Join us as the sun sets and
-          experience cinematic magic like never before. Available every evening
-          during Ramadan, from sunset till late, indulge in our special Ramadan
-          Nights promotion. Enjoy discounts of up to 25% off on tickets and
-          snacks. Celebrate the spirit of Ramadan with us at Pazas Cinema and
-          create unforgettable memories with your loved ones. See you at the
-          movies!
-        </p>
-        <a href="../views/what's_on.html" class="bookTicketsButton"
-          >Book Tickets</a
-        >
-      </div>
-      <div class="offerContainer">
-        <img
-          src="../images/FamilyOffer.jpg"
-          alt="Picture of a family in relation to the family offer"
-        />
-        <h2>Family Offer</h2>
-        <p>
-          Calling all families! Dive into a world of cinematic wonder with our
-          Family Fun promotion at Pazas Cinema. Treat your loved ones to an
-          exciting movie experience during the weekdays! With our Family Fun
-          offer, available year-round, you can enjoy discounted tickets and
-          exclusive deals on snacks for the whole family. Bring the kids,
-          grandparents, and everyone in between for a day filled with laughter,
-          adventure, and cherished moments. Make memories that will last a
-          lifetime at Pazas Cinema. Join us for Family Fun and let the magic of
-          movies bring your family closer together!
-        </p>
-        <a
-          href="../views/what's_on.html"
-          class="bookTicketsButton"
-          style="margin-bottom: 30px"
-          >Book Tickets</a
-        >
-      </div>
+      btn.on("click", function (e) {
+        e.preventDefault();
+        $("html, body").animate(
+          {
+            scrollTop: 0,
+          },
+          500
+        );
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div id="header"></div>
+  <a href="javascript:void(0);" id="backToTop" class="back-to-top">
+    <i class="arrow"></i><i class="arrow"></i>
+  </a>
+  <div class="contentContainer">
+    <h1 id="headers">Offers</h1>
+    <br /><br />
+    <div class="offerContainer">
+      <img src="../images/RamadanOffer.jpg" alt="Picture of Ramadan in relation to the offer" />
+      <h2>Ramadan Offer</h2>
+      <p>
+        Immerse yourself in the joy of Ramadan evenings with our exclusive
+        Ramadan Nights offer at Pazas Cinema. Join us as the sun sets and
+        experience cinematic magic like never before. Available every evening
+        during Ramadan, from sunset till late, indulge in our special Ramadan
+        Nights promotion. Enjoy discounts of up to 25% off on tickets and
+        snacks. Celebrate the spirit of Ramadan with us at Pazas Cinema and
+        create unforgettable memories with your loved ones. See you at the
+        movies!
+      </p>
+      <a href="../views/what's_on.html" class="bookTicketsButton">Book Tickets</a>
     </div>
-    <div id="footer"></div>
-  </body>
+    <div class="offerContainer">
+      <img src="../images/FamilyOffer.jpg" alt="Picture of a family in relation to the family offer" />
+      <h2>Family Offer</h2>
+      <p>
+        Calling all families! Dive into a world of cinematic wonder with our
+        Family Fun promotion at Pazas Cinema. Treat your loved ones to an
+        exciting movie experience during the weekdays! With our Family Fun
+        offer, available year-round, you can enjoy discounted tickets and
+        exclusive deals on snacks for the whole family. Bring the kids,
+        grandparents, and everyone in between for a day filled with laughter,
+        adventure, and cherished moments. Make memories that will last a
+        lifetime at Pazas Cinema. Join us for Family Fun and let the magic of
+        movies bring your family closer together!
+      </p>
+      <a href="../views/what's_on.html" class="bookTicketsButton" style="margin-bottom: 30px">Book Tickets</a>
+    </div>
+  </div>
+  <div id="footer"></div>
+</body>
+
 </html>
