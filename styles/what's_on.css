@@ -145,7 +145,7 @@ section .show button:hover {
 }
 
 /* ----------TOOLTIP STUFF-------- */
-#tooltip {
+.tooltip {
   position: absolute;
   background: #33b0de;
   box-shadow: inset 0 0 1000px #146fef;
@@ -157,7 +157,7 @@ section .show button:hover {
   border-radius: 10px;
 }
 
-#tooltip::after {
+.tooltip::after {
   content: " ";
   position: absolute;
   top: 50%;
@@ -169,18 +169,18 @@ section .show button:hover {
   /* box-shadow: inset 0 0 50px #146fef; */
 }
 
-#tooltip-content {
+.tooltip-content {
   width: 90%;
   margin: 10%;
 }
 
-#tooltip img {
+.tooltip img {
   position: absolute;
   width: 40%;
   height: 40%;
 }
 
-#tooltip #rating .fa {
+.tooltip .rating .fa {
   /* transform: scale(5); */
   /* color: rgb(255, 228, 73); */
   color: white;
@@ -189,7 +189,7 @@ section .show button:hover {
   left: inherit;
 }
 
-#tooltip #rating text {
+.tooltip .rating text {
   position: relative;
   top: 178px;
   left: 5px;
@@ -200,7 +200,7 @@ section .show button:hover {
   color: white;
 }
 
-#tooltip text {
+.tooltip text {
   position: relative;
   top: 170px;
   /* border-bottom: solid 2px black; */
@@ -208,7 +208,7 @@ section .show button:hover {
   color: white;
 }
 
-#tickets {
+.tickets {
   position: absolute;
   top: 30px;
   right: 0%;
@@ -225,13 +225,13 @@ section .show button:hover {
   border-radius: 5px;
 }
 
-#tickets .fa {
+.tickets .fa {
   top: 5px;
   position: relative;
   color: white;
 }
 
-#tickets .ticket-text {
+.tickets .ticket-text {
   font-family: "Ghibli";
   margin-top: 0.8em;
   left: -50px;
@@ -240,7 +240,7 @@ section .show button:hover {
   color: white;
 }
 
-#genre-box {
+.genre-box {
   position: relative;
   top: 25px;
   margin-right: 10%;
@@ -252,14 +252,14 @@ section .show button:hover {
   gap: 6px;
 }
 
-#genre-box text {
+.genre-box text {
   padding: 5px;
   border: solid 1px white;
   border-radius: 20px;
 }
 
 /* Tooltip Description */
-#tooltip p {
+.tooltip p {
   font-family: "Ghibli";
   font-size: x-small;
   position: relative;

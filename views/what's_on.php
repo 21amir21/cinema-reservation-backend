@@ -26,37 +26,50 @@
   <section>
     <h3 class="headers">WHAT'S ON</h3>
     <div class="movie-card-section">
+    <?php
+      $hostName = "localhost";
+      $userName = "root";
+      $password = "2121";
+      $dbName = "cinema_reservation_db";
+      $conn = new mysqli($hostName, $userName, $password, $dbName);
+
+      $sql = "SELECT * FROM movie";
+      $result = $conn->query($sql);
+      if ($result->num_rows > 0) {
+        foreach ($result as $movie) {
+
+    ?>
       <div class="card">
         <a href="upFromThePoppyHill.html">
-          <img id="activate" src="./../images/upFromThePoppyHill.jpg" />
+          <img class="activate" src="<?php echo $movie['postersURL'] ?>" />
         </a>
         <div class="card-content">
           <a href="upFromThePoppyHill.html">
-            <p class="movie-name"> From Up On Poppy Hill (2011)</p>
+            <p class="movie-name"> <?php echo $movie['name']; ?></p>
           </a>
           <!-- ToolTip For Movie -->
-          <span id="tooltip">
-            <div id="tooltip-content">
+          <span class="tooltip" style="display: none;">
+            <div class="tooltip-content">
               <!-- TOOLTIP IMAGE -->
-              <img src="./../images/upFromThePoppyHill.jpg" />
-              <text>From Up On Poppy Hill</text><br />
+              <img src="<?php echo $movie['postersURL']; ?>" />
+              <text><?php echo $movie['name']; ?></text><br />
               <!-- TOOLTIP RATING -->
-              <span id="rating">
+              <span class="rating">
                 <i class="fa fa-star" aria-hidden="true"></i>
                 <i class="fa fa-star" aria-hidden="true"></i>
                 <i class="fa fa-star" aria-hidden="true"></i>
                 <i class="fa fa-star" aria-hidden="true"></i>
                 <i class="fa fa-star-half-o" aria-hidden="true"></i>
-                <text>4.8</text>
+                <text><?php echo $movie['rating']; ?></text>
               </span>
               <!-- TOOLTIP GENRE -->
-              <div id="genre-box">
-                <text>Melodrama</text>
-                <text>Romance</text>
-                <text>Coming-of-age</text>
+              <div class="genre-box">
+                <text><?php echo $movie['genre']; ?></text>
+                <text><?php echo $movie['genre2']; ?></text>
+                <text><?php echo $movie['genre3']; ?></text>
               </div>
               <!-- TOOLTIP TICKETS AND SHOW TIMES -->
-              <div id="tickets">
+              <div class="tickets">
                 <i class="fa fa-video-camera fa-2x" aria-hidden="true" style="justify-self: center"></i>
                 <i class="fa fa-ticket" aria-hidden="true"> 09:00 am</i>
                 <i class="fa fa-ticket" aria-hidden="true"> 12:00 pm</i>
@@ -64,15 +77,13 @@
               </div>
               <!-- TOOLTIP MOVIE DESCRIPTION -->
               <p>
-                Two high schoolers find hope as they fight to save an old
-                wartime era clubhouse from destruction during the preparations
-                for the 1964 Tokyo Olympics.
+              <?php echo $movie['shortDescription']; ?>
               </p>
             </div>
           </span>
         </div>
       </div>
-      <div class="card">
+      <!-- <div class="card">
         <img src="./../images/ponyo.jpg" />
 
         <div class="card-content">
@@ -149,7 +160,11 @@
         <div class="card-content">
           <p class="movie-name">The Secret World Of Arrietty</p>
         </div>
-      </div>
+      </div> -->
+      <?php
+        }
+      }
+      ?>
     </div>
     <!---movie-card--->
 
