@@ -96,7 +96,7 @@ $seatNumber = 0;
       <a href="../views/upFromThePoppyHill.html"><button type="button" class="book" style="float: left">
           Cancel
         </button></a>
-      <a href="../views/Payment.html"><button type="button" class="book" style="float: right">
+      <a href="../views/Payment.php"><button type="button" class="book" style="float: right">
           Proceed to Payment
         </button></a>
     </div>
