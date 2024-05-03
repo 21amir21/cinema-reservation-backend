@@ -24,8 +24,7 @@ for (let seat of seats) {
 }
 
 let submitButton = document.getElementById("seatSubmission");
-submitButton.addEventListener("click", function getSelectedSeats(e) {
-  e.preventDefault();
+submitButton.addEventListener("click", function getSelectedSeats() {
   let selectedSeatsIds = [];
   let selectedSeats = document.getElementsByClassName("selected");
   for (let seat of selectedSeats) {
@@ -34,18 +33,25 @@ submitButton.addEventListener("click", function getSelectedSeats(e) {
     selectedSeatsIds.push(idInt);
   }
   if (selectedSeatsIds.length) {
-    fetch("../data/getSelectedSeats.php", {
+    let arrayIDs = { ids: selectedSeatsIds };
+    // let queryString =
+    //   "ids=" + encodeURIComponent(JSON.stringify(selectedSeatsIds));
+    fetch("localhost/views/seat-selection.php", {
       method: "POST",
-      body: JSON.stringify(selectedSeatsIds),
       headers: {
-        "Content-Type": "application/json; charset=UTF-8"
-      }
-    }).then(res => {
-      console.log("Request complete! response:", res.json());
-      console.log(selectedSeatsIds);
-    });
+        "Content-Type": "application/json; charset=UTF-8",
+      },
+      body: JSON.stringify(arrayIDs),
+    })
+      .then((res) => res.text())
+      .then((data) => {
+        console.log("Request complete! response:", data);
+        // Proceed with further processing if needed
+      })
+      .catch((err) => {
+        console.error("Error:", err);
+      });
   } else {
     alert("Please select at least 1 seat");
   }
 });
-
