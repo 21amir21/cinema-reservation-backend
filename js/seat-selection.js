@@ -22,3 +22,30 @@ for (let seat of seats) {
     }
   });
 }
+
+let submitButton = document.getElementById("seatSubmission");
+submitButton.addEventListener("click", function getSelectedSeats(e) {
+  e.preventDefault();
+  let selectedSeatsIds = [];
+  let selectedSeats = document.getElementsByClassName("selected");
+  for (let seat of selectedSeats) {
+    let id = seat.getAttribute("id");
+    let idInt = parseInt(id);
+    selectedSeatsIds.push(idInt);
+  }
+  if (selectedSeatsIds.length) {
+    fetch("../data/getSelectedSeats.php", {
+      method: "POST",
+      body: JSON.stringify(selectedSeatsIds),
+      headers: {
+        "Content-Type": "application/json; charset=UTF-8"
+      }
+    }).then(res => {
+      console.log("Request complete! response:", res.json());
+      console.log(selectedSeatsIds);
+    });
+  } else {
+    alert("Please select at least 1 seat");
+  }
+});
+
