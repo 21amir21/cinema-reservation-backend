@@ -98,7 +98,7 @@ $seatNumber = 0;
         Cancel
       </button>
     </a>
-    <a href="Payment.html">
+    <a href="Payment.php">
       <button type="button" class="book" id="seatSubmission" style="float: right">
         Proceed to Payment
       </button>
