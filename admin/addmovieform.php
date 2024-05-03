@@ -90,11 +90,9 @@ $sql = "INSERT INTO movie(
     '$language', '$subtitles', '$description',
     '$shortdescription','$price'
     ) ";
-
-    $message = $sql;
-    file_put_contents('log.txt', $message, FILE_APPEND);
     
 $conn->query($sql);
 
 $conn->close();
 
+header("Location: AdminMovieDashboard.php");
