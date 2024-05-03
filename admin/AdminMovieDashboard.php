@@ -27,47 +27,38 @@
   <section>
     <h3 class="headers">Current Movies</h3>
     <div class="movie-card-section">
+    <?php
+      $hostName = "localhost";
+      $userName = "root";
+      $password = "2121";
+      $dbName = "cinema_reservation_db";
+      $conn = new mysqli($hostName, $userName, $password, $dbName);
+          
+    // retrieving the movies from databse
+      $sql = "SELECT * FROM movie WHERE removedFlag=0";
+      $result = $conn->query($sql);
+
+
+        
+      if ($result->num_rows > 0) {
+        foreach ($result as $movie) {
+
+      ?>
       <div class="card">
-        <img id="myDiv" src="../images/upFromThePoppyHill.jpg" />
-        <!-- <p id="tooltip-text">MOVIE DETAILS</p> -->
-        <div class="card-content">
-          <p class="movie-name">Up From The Poppy Hill</p>
+         <a href="movie_details.php?id=<?= $movie["id"] ?>">
+              <img class="activate" src="<?php echo $movie['postersURL'] ?>" />
+            </a>
+            <div class="card-content">
+                <p class="movie-name"> <?php echo $movie['name']; ?></p>    
           <br />
           <a href="./EditMovieForm.html"><input type="button" value="Edit" class="editmovie" /></a>
-
-          <input type="button" value="Remove" class="editmovie" style="margin-left: 80px" />
+          <a href="removemovirfromdb.php?id=<?= $movie["id"] ?>"><input type="button" value="Remove" class="editmovie" style="margin-left: 80px" /></a> 
         </div>
       </div>
-      <div class="card">
-        <img src="../images/ponyo.jpg" />
-
-        <div class="card-content">
-          <p class="movie-name">Ponyo</p>
-          <br />
-          <a href="./EditMovieForm.html"><input type="button" value="Edit" class="editmovie" /></a>
-
-          <input type="button" value="Remove" class="editmovie" style="margin-left: 80px" />
-        </div>
-      </div>
-      <div class="card">
-        <img src="../images/YourName.jpg" />
-
-        <div class="card-content">
-          <p class="movie-name">Your Name</p>
-          <br />
-          <a href="./EditMovieForm.html"><input type="button" value="Edit" class="editmovie" /></a>
-          <input type="button" value="Remove" class="editmovie" style="margin-left: 80px" />
-        </div>
-      </div>
-      <div class="card">
-        <img src="../images/castleInTheSky.jpg" />
-
-        <div class="card-content">
-          <p class="movie-name">Castle In The Sky</p>
-          <br />
-          <a href="./EditMovieForm.html"><input type="button" value="Edit" class="editmovie" /></a>
-          <input type="button" value="Remove" class="editmovie" style="margin-left: 80px" />
-        </div>
+      <?php
+        }
+      }
+      ?>
       </div>
     </div>
     <!---movie-card--->

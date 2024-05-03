@@ -44,68 +44,41 @@
 
   <section>
     <h3 class="headers">What's On</h3>
-    <div class="movie-card-section">
+ <div class="movie-card-section">
+    <?php
+      $hostName = "localhost";
+      $userName = "root";
+      $password = "2121";
+      $dbName = "cinema_reservation_db";
+      $conn = new mysqli($hostName, $userName, $password, $dbName);
+          
+    // retrieving the movies from databse
+      $sql = "SELECT * FROM movie WHERE removedFlag=0";
+      $result = $conn->query($sql);
+
+
+        
+      if ($result->num_rows > 0) {
+        foreach ($result as $movie) {
+
+      ?>
       <div class="card">
-        <a href="./views/upFromThePoppyHill.html">
-          <img id="activate" src="./images/upFromThePoppyHill.jpg" />
-        </a>
-        <!-- <p id="tooltip-text">MOVIE DETAILS</p> -->
-        <div class="card-content">
-          <p class="movie-name">From Up On Poppy Hill</p>
+         <a href="movie_details.php?id=<?= $movie["id"] ?>">
+              <img class="activate" src="<?php echo $movie['postersURL'] ?>" />
+            </a>
+            <div class="card-content">
+                <p class="movie-name"> <?php echo $movie['name']; ?></p>    
+          <br />
+          <a href="./EditMovieForm.html"><input type="button" value="Edit" class="editmovie" /></a>
+          <a href="removemovirfromdb.php?id=<?= $movie["id"] ?>"><input type="button" value="Remove" class="editmovie" style="margin-left: 80px" /></a> 
         </div>
       </div>
-      <div class="card">
-        <img src="./images/ponyo.jpg" />
-
-        <div class="card-content">
-          <p class="movie-name">Ponyo</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="./images/YourName.jpg" />
-
-        <div class="card-content">
-          <p class="movie-name">Your Name</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="./images/castleInTheSky.jpg" />
-
-        <div class="card-content">
-          <p class="movie-name">Castle In The Sky</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="./images/whenMarnieWasThere.jpg" />
-
-        <div class="card-content">
-          <p class="movie-name">When Marnie Was There</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="./images/theWindRises.jpg" />
-
-        <div class="card-content">
-          <p class="movie-name">The Wind Rises</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="./images/kiksDelivery.jpg" />
-
-        <div class="card-content">
-          <p class="movie-name">kiki's delivery service</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="./images/SpiritedAway.jpg" />
-
-        <div class="card-content">
-          <p class="movie-name">Spirited Away</p>
-        </div>
+      <?php
+        }
+      }
+      ?>
       </div>
     </div>
-
     <!---movie-card--->
 
     <div class="show">
