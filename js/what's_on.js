@@ -4,6 +4,9 @@ for (let i = 0; i < myDiv.length; i++) {
   myDiv[i].addEventListener("mouseover", function () {
     const tooltip = document.querySelectorAll(".tooltip").item(i);
     tooltip.style.display = "block";
+    if (i + (1 % 3) == 0) {
+      tooltip.style.left = "-150%";
+    }
   });
   myDiv[i].addEventListener("mouseout", function () {
     const tooltips = document.querySelectorAll(".tooltip").item(i);
