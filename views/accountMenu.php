@@ -97,7 +97,7 @@
         <div class="form-group password">
           <label for="password">Confirm New Password</label>
           <input type="password" id="password" placeholder="Confirm your new password" required name="confirmPassword" />
-          <i id="pass-toggle-btn" class="fa-solid fa-eye-slash"></i>
+          <!-- <i id="pass-toggle-btn" class="fa-solid fa-eye-slash"></i> -->
         </div>
         <div class="form-group date">
           <label for="date">Birth Date</label>
