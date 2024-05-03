@@ -15,33 +15,47 @@
     });
   </script>
   <link rel="stylesheet" href="./../styles/upFromThePoppyHill.css" />
+  
   <title>Up From The Poppy Hill</title>
 </head>
 
 <body>
   <div id="header"></div>
   <div id="page-content">
-    <div id="tooltip">
+  <?php
+      $id = $_GET['id'];
+      $hostName = "localhost";
+      $userName = "root";
+      $password = "2121";
+      $dbName = "cinema_reservation_db";
+      $conn = new mysqli($hostName, $userName, $password, $dbName);
+
+      $sql = "SELECT * FROM movie WHERE id = $id";
+      $row = $conn->query($sql);
+      $movie = mysqli_fetch_assoc($row);
+
+      ?>
+    <div id="tooltip" style=" background-image: url(<?php echo $movie['backgroundImageURL']; ?>);">
       <div id="tooltip-content">
         <!-- TOOLTIP IMAGE -->
-        <img src="./../images/upFromThePoppyHill.jpg" />
-        <text id="title">From Up On Poppy Hill</text><br />
+        <img src="<?php echo $movie['postersURL']; ?>" />
+        <text id="title"><?php echo $movie['name']; ?></text><br />
         <div id="under-title">
-          <text>2011</text>
-          <text>7+</text>
-          <text>1 h 31 m</text>
-          <text>Language: Japanese</text>
+          <text><?php echo $movie['releaseDate']; ?></text>
+          <text><?php echo $movie['ageRating']; ?></text>
+          <text><?php echo $movie['runningTime']; ?></text>
+          <text>Language: <?php echo $movie['language']; ?></text>
           <hr />
         </div>
         <!-- TOOLTIP GENRE -->
         <div id="genre-box">
-          <text>Melodrama</text>
-          <text>Romance</text>
-          <text>Coming-of-age</text>
+          <text><?php echo $movie['genre']; ?></text>
+          <text><?php echo $movie['genre2']; ?></text>
+          <text><?php echo $movie['genre3']; ?></text>
         </div>
         <!-- TOOLTIP RATING -->
         <span id="rating">
-          <text>4.8</text>
+          <text><?php echo $movie['rating']; ?></text>
           <i class="fa fa-star fa-2x" aria-hidden="true"></i>
           <i class="fa fa-star fa-2x" aria-hidden="true"></i>
           <i class="fa fa-star fa-2x" aria-hidden="true"></i>
@@ -50,28 +64,23 @@
         </span>
 
         <!-- TOOLTIP MOVIE DESCRIPTION -->
-        <h5>Director: Gorō Miyazaki</h5>
+        <h5>Director: <?php echo $movie['director']; ?></h5>
         <p id="description">
-          The movie is based on the 1980 serialized manga of the same name
-          illustrated by Chizuru Takahashi and written by Tetsurō Sayama. Set
-          in 1963 Yokohama, Japan, the film tells the story of Umi Matsuzaki,
-          a high school girl living in her grandmother's boarding house called
-          "Coquelicot Manor". When Umi meets Shun Kazama, a member of the
-          school's newspaper club, they decide to clean up the school's
-          clubhouse, Quartier Latin. However, Tokumaru, the chairman of the
-          local high school and a businessman, intends to demolish the
-          building for redevelopment and Umi and Shun, along with Shirō
-          Mizunuma, must persuade him to reconsider.
+        <?php echo $movie['description']; ?>
         </p>
       </div>
     </div>
     <div id="details">
       <div id="genre">
-        <text><b>Genre:</b> Melodrama, Romance, Coming-of-age</text>
-        <text><b>Running Time:</b> 91 min</text>
-        <text><b>Release Date:</b> </text>
-        <text><b>Language:</b> Japanese</text>
-        <text><b>Subtitles:</b> English</text>
+        <text>
+        <b>Genre:</b> <?php echo $movie['genre']; ?> ,
+        <?php echo $movie['genre2']; ?>, 
+        <?php echo $movie['genre']; ?> 
+      </text>
+        <text><b>Running Time:</b> <?php echo $movie['runningTime']; ?></text>
+        <text><b>Release Date:</b> <?php echo $movie['releaseDate']; ?></text>
+        <text><b>Language:</b> <?php echo $movie['language']; ?></text>
+        <text><b>Subtitles:</b> <?php echo $movie['subtitles']; ?></text>
       </div>
       <div id="show-times">
         <i class="fa fa-video-camera fa-2x" aria-hidden="true"> Show Times</i>
@@ -82,10 +91,11 @@
     </div>
     <div id="trailer">
       <!-- INSERT TRAILER HERE -->
-      <video width="100%" height="100%" controls poster="./../images/bannerUpFromThePoppyHill.jpg">
-        <source src="./../videos/OnPoppyHillOfficial.mp4" type="video/mp4" />
-      </video>
+      <iframe width="100%" height="100%" src="<?php echo $movie['trailerURL']; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    
     </div>
+
     <div id="button-line">
       <hr />
       <a href="./seat-selection.php"><button>Buy Your Ticket</button></a>
