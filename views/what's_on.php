@@ -26,7 +26,7 @@
   <section>
     <h3 class="headers">WHAT'S ON</h3>
     <div class="movie-card-section">
-    <?php
+      <?php
       $hostName = "localhost";
       $userName = "root";
       $password = "2121";
@@ -38,52 +38,52 @@
       if ($result->num_rows > 0) {
         foreach ($result as $movie) {
 
-    ?>
-      <div class="card">
-        <a href="upFromThePoppyHill.html">
-          <img class="activate" src="<?php echo $movie['postersURL'] ?>" />
-        </a>
-        <div class="card-content">
-          <a href="upFromThePoppyHill.html">
-            <p class="movie-name"> <?php echo $movie['name']; ?></p>
-          </a>
-          <!-- ToolTip For Movie -->
-          <span class="tooltip">
-            <div class="tooltip-content">
-              <!-- TOOLTIP IMAGE -->
-              <img style="width: 40%;height:40%;" src="<?php echo $movie['postersURL']; ?>" />
-              <text><?php echo $movie['name']; ?></text><br />
-              <!-- TOOLTIP RATING -->
-              <span class="rating">
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star-half-o" aria-hidden="true"></i>
-                <text><?php echo $movie['rating']; ?></text>
+      ?>
+          <div class="card">
+            <a href="movie_details.php?id=<?= $movie["id"] ?>">
+              <img class="activate" src="<?php echo $movie['postersURL'] ?>" />
+            </a>
+            <div class="card-content">
+              <a href="upFromThePoppyHill.html">
+                <p class="movie-name"> <?php echo $movie['name']; ?></p>
+              </a>
+              <!-- ToolTip For Movie -->
+              <span class="tooltip">
+                <div class="tooltip-content">
+                  <!-- TOOLTIP IMAGE -->
+                  <img style="width: 40%;height:40%;" src="<?php echo $movie['postersURL']; ?>" />
+                  <text><?php echo $movie['name']; ?></text><br />
+                  <!-- TOOLTIP RATING -->
+                  <span class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                    <text><?php echo $movie['rating']; ?></text>
+                  </span>
+                  <!-- TOOLTIP GENRE -->
+                  <div class="genre-box">
+                    <text><?php echo $movie['genre']; ?></text>
+                    <text><?php echo $movie['genre2']; ?></text>
+                    <text><?php echo $movie['genre3']; ?></text>
+                  </div>
+                  <!-- TOOLTIP TICKETS AND SHOW TIMES -->
+                  <div class="tickets">
+                    <i class="fa fa-video-camera fa-2x" aria-hidden="true" style="justify-self: center"></i>
+                    <i class="fa fa-ticket" aria-hidden="true"> 09:00 am</i>
+                    <i class="fa fa-ticket" aria-hidden="true"> 12:00 pm</i>
+                    <i class="fa fa-ticket" aria-hidden="true"> 15:00 pm</i>
+                  </div>
+                  <!-- TOOLTIP MOVIE DESCRIPTION -->
+                  <p>
+                    <?php echo $movie['shortDescription']; ?>
+                  </p>
+                </div>
               </span>
-              <!-- TOOLTIP GENRE -->
-              <div class="genre-box">
-                <text><?php echo $movie['genre']; ?></text>
-                <text><?php echo $movie['genre2']; ?></text>
-                <text><?php echo $movie['genre3']; ?></text>
-              </div>
-              <!-- TOOLTIP TICKETS AND SHOW TIMES -->
-              <div class="tickets">
-                <i class="fa fa-video-camera fa-2x" aria-hidden="true" style="justify-self: center"></i>
-                <i class="fa fa-ticket" aria-hidden="true"> 09:00 am</i>
-                <i class="fa fa-ticket" aria-hidden="true"> 12:00 pm</i>
-                <i class="fa fa-ticket" aria-hidden="true"> 15:00 pm</i>
-              </div>
-              <!-- TOOLTIP MOVIE DESCRIPTION -->
-              <p>
-              <?php echo $movie['shortDescription']; ?>
-              </p>
             </div>
-          </span>
-        </div>
-      </div>
-      <!-- <div class="card">
+          </div>
+          <!-- <div class="card">
         <img src="./../images/ponyo.jpg" />
 
         <div class="card-content">
