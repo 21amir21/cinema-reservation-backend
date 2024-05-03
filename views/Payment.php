@@ -11,8 +11,21 @@
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 
+<?php
+  $id = $_GET['id'];
+  $hostName = "localhost";
+  $userName = "root";
+  $password = "2121";
+  $dbName = "cinema_reservation_db";
+  $conn = new mysqli($hostName, $userName, $password, $dbName);
+
+  $sql = "SELECT * FROM movie WHERE id = $id";
+  $row = $conn->query($sql);
+  $movie = mysqli_fetch_assoc($row);
+?>
+
 <body>
-  <form id="submit-form" action="../data/payment.php">
+  <form id="submit-form" action="../data/payment.php?id="<?php $movie['id'] ?>>
     <h2>Payment Details</h2>
     <div class="form-group">
       <label for="firstname">First Name *</label>
@@ -52,6 +65,9 @@
       <div class="form-group">
         <label for="offercode">Offer Code</label>
         <input type="text" id="offercode" placeholder="Enter Offer Code if any" />
+      </div>
+      <div class="form-group">
+        <label for="movieName">Movie:  <?php echo $movie['name'] ?></label>
       </div>
       <div class="form-group confirm_details-btn">
         <input type="submit" value="Complete Payment" />
