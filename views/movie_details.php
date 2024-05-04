@@ -16,29 +16,29 @@
   </script>
   <link rel="stylesheet" href="./../styles/upFromThePoppyHill.css" />
   <?php
-      $id = $_GET['id'];
-      $hostName = "localhost";
-      $userName = "root";
-      $password = "2121";
-      $dbName = "cinema_reservation_db";
-      $conn = new mysqli($hostName, $userName, $password, $dbName);
+  $id = $_GET['id'];
+  $hostName = "localhost";
+  $userName = "root";
+  $password = "2121";
+  $dbName = "cinema_reservation_db";
+  $conn = new mysqli($hostName, $userName, $password, $dbName);
 
-      $sql = "SELECT * FROM movie WHERE id = $id";
-      $row = $conn->query($sql);
-      $movie = mysqli_fetch_assoc($row);
+  $sql = "SELECT * FROM movie WHERE id = $id";
+  $row = $conn->query($sql);
+  $movie = mysqli_fetch_assoc($row);
 
-      ?>
-  
+  ?>
+
   <title><?php echo $movie['name']; ?></title>
 </head>
 
 <body>
   <div id="header"></div>
   <div id="page-content">
-    <div id="tooltip" style=" background-image: url(<?php echo $movie['backgroundImageURL']; ?>);">
+    <div id="tooltip" style=" background-image: url(<?= "../images/" . $movie['backgroundImageURL']; ?>);">
       <div id="tooltip-content">
         <!-- TOOLTIP IMAGE -->
-        <img src="<?php echo $movie['postersURL']; ?>" />
+        <img src="<?= "../images/" . $movie['postersURL']; ?>" />
         <text id="title"><?php echo $movie['name']; ?></text><br />
         <div id="under-title">
           <text><?php echo $movie['releaseDate']; ?></text>
@@ -66,17 +66,17 @@
         <!-- TOOLTIP MOVIE DESCRIPTION -->
         <h5>Director: <?php echo $movie['director']; ?></h5>
         <p id="description">
-        <?php echo $movie['description']; ?>
+          <?php echo $movie['description']; ?>
         </p>
       </div>
     </div>
     <div id="details">
       <div id="genre">
         <text>
-        <b>Genre:</b> <?php echo $movie['genre']; ?> ,
-        <?php echo $movie['genre2']; ?>, 
-        <?php echo $movie['genre']; ?> 
-      </text>
+          <b>Genre:</b> <?php echo $movie['genre']; ?> ,
+          <?php echo $movie['genre2']; ?>,
+          <?php echo $movie['genre']; ?>
+        </text>
         <text><b>Running Time:</b> <?php echo $movie['runningTime']; ?></text>
         <text><b>Release Date:</b> <?php echo $movie['releaseDate']; ?></text>
         <text><b>Language:</b> <?php echo $movie['language']; ?></text>
@@ -93,7 +93,7 @@
       <!-- INSERT TRAILER HERE -->
       <iframe width="100%" height="100%" src="<?php echo $movie['trailerURL']; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-    
+
     </div>
 
     <div id="button-line">
