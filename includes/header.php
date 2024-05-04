@@ -59,7 +59,7 @@
         $firstName = $_SESSION['admin']['adminName'];
         // Display welcome message with the admin's name
         echo "<p style='margin-right: 10px;' >Welcome, $firstName</p>";
-        echo '<a href="/views/accountMenu.php"><button class="login-btn">My Account</button></a>';
+        echo '<a href="/admin/AdminMovieDashboard.php"><button class="login-btn">My Account</button></a>';
         echo '<a href="/data/logout.php"><button class="login-btn">Logout</button></a>';
       } else {
         // Display login and sign up buttons

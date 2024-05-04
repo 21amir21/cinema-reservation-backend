@@ -38,4 +38,4 @@ $conn->query($sql);
 
 
 $conn->close();
-header("Location: login.html");
+header("Location: /views/login.html");
