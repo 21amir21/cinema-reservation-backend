@@ -15,13 +15,6 @@
     });
   </script>
   <link rel="stylesheet" href="./../styles/upFromThePoppyHill.css" />
-  
-  <title>Up From The Poppy Hill</title>
-</head>
-
-<body>
-  <div id="header"></div>
-  <div id="page-content">
   <?php
       $id = $_GET['id'];
       $hostName = "localhost";
@@ -35,6 +28,13 @@
       $movie = mysqli_fetch_assoc($row);
 
       ?>
+  
+  <title><?php echo $movie['name']; ?></title>
+</head>
+
+<body>
+  <div id="header"></div>
+  <div id="page-content">
     <div id="tooltip" style=" background-image: url(<?php echo $movie['backgroundImageURL']; ?>);">
       <div id="tooltip-content">
         <!-- TOOLTIP IMAGE -->
