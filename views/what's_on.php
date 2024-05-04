@@ -44,7 +44,7 @@
               <img class="activate" src="<?php echo $movie['postersURL'] ?>" />
             </a>
             <div class="card-content">
-              <a href="upFromThePoppyHill.html">
+              <a href="movie_details.php?id=<?= $movie["id"] ?>">
                 <p class="movie-name"> <?php echo $movie['name']; ?></p>
               </a>
               <!-- ToolTip For Movie -->
