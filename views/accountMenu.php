@@ -37,13 +37,18 @@
 
     session_start();
 
+    $custID = $_SESSION["customer"]["customerID"];
+
     $hostName = "localhost";
     $userName = "root";
     $password = "2121";
     $dbName = "cinema_reservation_db";
     $conn = new mysqli($hostName, $userName, $password, $dbName);
 
-    $query = "SELECT * FROM movie";
+    $query = "SELECT movie.postersURL, movie.name, movie.price, movie.releaseDate 
+    FROM movie 
+    INNER JOIN payment ON movie.id = payment.movieId 
+    WHERE payment.customerId = $custID";
     $result = mysqli_query($conn, $query);
 
     // Check if there are any movies in the database
