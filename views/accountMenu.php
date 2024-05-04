@@ -54,7 +54,7 @@
       <div class="cards-container">
         <?php foreach ($movies as $movie) : ?>
           <div class="card" style="width: 18rem">
-            <img src="<?php echo $movie['postersURL']; ?>" class="card-img-top" alt="Movie Poster" />
+            <img src="<?= "../images/" . $movie['postersURL']; ?>" class="card-img-top" alt="Movie Poster" />
             <div class="card-body" style="align-content: center; color: #013e48">
               <h5 class="card-title"><b><?php echo $movie['name']; ?></b></h5>
               <li class="card-text" style="list-style-type: none">Price: <?php echo $movie['price']; ?>$</li>
