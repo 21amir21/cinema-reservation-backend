@@ -44,39 +44,39 @@
 
   <section>
     <h3 class="headers">What's On</h3>
- <div class="movie-card-section">
-    <?php
+    <div class="movie-card-section">
+      <?php
       $hostName = "localhost";
       $userName = "root";
       $password = "2121";
       $dbName = "cinema_reservation_db";
       $conn = new mysqli($hostName, $userName, $password, $dbName);
-          
-    // retrieving the movies from databse
+
+      // retrieving the movies from databse
       $sql = "SELECT * FROM movie WHERE removedFlag=0";
       $result = $conn->query($sql);
 
 
-        
+
       if ($result->num_rows > 0) {
         foreach ($result as $movie) {
 
       ?>
-      <div class="card">
-         <a href="movie_details.php?id=<?= $movie["id"] ?>">
-              <img class="activate" src="<?php echo $movie['postersURL'] ?>" />
+          <div class="card">
+            <a href="movie_details.php?id=<?= $movie["id"] ?>">
+              <img class="activate" src="<?= "../images/" . $movie['postersURL'] ?>" />
             </a>
             <div class="card-content">
-                <p class="movie-name"> <?php echo $movie['name']; ?></p>    
-          <br />
-          
-        </div>
-      </div>
+              <p class="movie-name"> <?php echo $movie['name']; ?></p>
+              <br />
+
+            </div>
+          </div>
       <?php
         }
       }
       ?>
-      </div>
+    </div>
     </div>
     <!---movie-card--->
 
