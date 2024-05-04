@@ -51,7 +51,7 @@
             <div class="card-content">
                 <p class="movie-name"> <?php echo $movie['name']; ?></p>    
           <br />
-          <a href="./EditMovieForm.html"><input type="button" value="Edit" class="editmovie" /></a>
+          <a href="EditMovieInfoForm.php?id=<?= $movie["id"] ?>"><input type="button" value="Edit" class="editmovie" /></a>
           <a href="removemovirfromdb.php?id=<?= $movie["id"] ?>"><input type="button" value="Remove" class="editmovie" style="margin-left: 80px" /></a> 
         </div>
       </div>
