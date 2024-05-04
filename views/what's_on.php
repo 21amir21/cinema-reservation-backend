@@ -41,7 +41,7 @@
       ?>
           <div class="card">
             <a href="movie_details.php?id=<?= $movie["id"] ?>">
-              <img class="activate" src="<?php echo $movie['postersURL'] ?>" />
+              <img class="activate" src="<?= "../images/" . $movie['postersURL'] ?>" />
             </a>
             <div class="card-content">
               <a href="movie_details.php?id=<?= $movie["id"] ?>">
@@ -51,7 +51,7 @@
               <span class="tooltip">
                 <div class="tooltip-content">
                   <!-- TOOLTIP IMAGE -->
-                  <img style="width: 40%;height:40%;" src="<?php echo $movie['postersURL']; ?>" />
+                  <img style="width: 40%;height:40%;" src="<?= "../images/" . $movie['postersURL']; ?>" />
                   <text><?php echo $movie['name']; ?></text><br />
                   <!-- TOOLTIP RATING -->
                   <span class="rating">
