@@ -39,11 +39,11 @@ function validatePrevious() {
 
   // Clearing previous error messages
   document
-    .querySelectorAll(".form-group .error")
-    .forEach((field) => field.classList.remove("error"));
+      .querySelectorAll(".form-group .error")
+      .forEach((field) => field.classList.remove("error"));
   document
-    .querySelectorAll(".error-text")
-    .forEach((errorText) => errorText.remove());
+      .querySelectorAll(".error-text")
+      .forEach((errorText) => errorText.remove());
 
   // Performing validation checks
   if (firstname === "") {
@@ -86,11 +86,11 @@ const handleFormData = (e) => {
 
   // Clearing previous error messages
   document
-    .querySelectorAll(".form-group .error")
-    .forEach((field) => field.classList.remove("error"));
+      .querySelectorAll(".form-group .error")
+      .forEach((field) => field.classList.remove("error"));
   document
-    .querySelectorAll(".error-text")
-    .forEach((errorText) => errorText.remove());
+      .querySelectorAll(".error-text")
+      .forEach((errorText) => errorText.remove());
 
   // Performing validation checks
 
@@ -113,7 +113,7 @@ const handleFormData = (e) => {
 
   // Submitting the form
   form.submit();
-  alert("Payment Successfull!");
+  // alert("Payment Successfull!");
 };
 
 // Handling form submission event

@@ -28,7 +28,7 @@
       $movie = mysqli_fetch_assoc($row);
 
       ?>
-  
+
   <title><?php echo $movie['name']; ?></title>
 </head>
 
@@ -98,7 +98,7 @@
 
     <div id="button-line">
       <hr />
-      <a href="./seat-selection.php"><button>Buy Your Ticket</button></a>
+      <a href="./seat-selection.php?id=<?= $id ?>"><button>Buy Your Ticket</button></a>
     </div>
   </div>
   <div id="footer"></div>

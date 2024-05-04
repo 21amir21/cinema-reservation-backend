@@ -1,34 +1,44 @@
-<?php 
-require __DIR__ . "/validate.php";
+<?php
+  require __DIR__ . "/validate.php";
 
+  session_start();
 
-session_start();
+  $hostName = "localhost";
+  $userName = "root";
+  $password = "2121";
+  $dbName = "cinema_reservation_db";
+  $conn = new mysqli($hostName, $userName, $password, $dbName);
 
-$hostName = "localhost";
-$userName = "root";
-$password = "2121";
-$dbName = "cinema_reservation_db";
-$conn = new mysqli($hostName, $userName, $password, $dbName);
+  file_put_contents("log.txt", "");
 
+  $movieID = $_GET['id'];
+  $encodedSeats = $_GET['seats'];
+  $seats = json_decode($encodedSeats);
 
-$movieid = $_GET['id'];
+  $sql = "SELECT * FROM movie WHERE id = $movieID";
+  $row = $conn->query($sql);
+  $movie = mysqli_fetch_assoc($row);
 
-$sql = "SELECT * FROM movie WHERE id = $movieid";
-$row = $conn->query($sql);
-$movie = mysqli_fetch_assoc($row);
+  $moviePriceSql = "SELECT price FROM movie WHERE id = $movieID";
+  $result = $conn->query($moviePriceSql);
+  $moviePriceRow = mysqli_fetch_assoc($result);
 
+  $moviePrice = $moviePriceRow['price'];
 
+  $totalPrice = $moviePrice * sizeof($seats);
 
-if (isset($_SESSION["customer"])) {
-  $customerId = $_SESSION["customer"]["customerID"];
-  
+  foreach ($seats as $seat) {
+    $seatSql = "UPDATE seat SET reserved = 1 WHERE id = $seat";
+    $conn->query($seatSql);
+  }
 
-  // movie price for payment amount --> get it using a query using the id
-  //$sql= "INSERT INTO payment(customerId,movieId, ticketId, paymentAmount) values($customerId,$movieId,$moviePrice)";
-}
- $conn->query($sql);
+  if (isset($_SESSION["customer"])) {
+    $customerId = $_SESSION["customer"]["customerID"];
 
-$conn->close();
-header("Location: /");
+    $paymentSql = "INSERT INTO payment(customerId, movieId, paymentAmount) values($customerId, $movieID, $totalPrice)";
+  }
+  $conn->query($paymentSql);
+  $conn->close();
+  header("Location: /");
 
 
