@@ -33,7 +33,7 @@
       $dbName = "cinema_reservation_db";
       $conn = new mysqli($hostName, $userName, $password, $dbName);
 
-      $sql = "SELECT * FROM movie";
+      $sql = "SELECT * FROM movie WHERE removedFlag=0";
       $result = $conn->query($sql);
       if ($result->num_rows > 0) {
         foreach ($result as $movie) {

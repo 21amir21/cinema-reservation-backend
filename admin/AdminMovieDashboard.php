@@ -35,8 +35,9 @@
       $conn = new mysqli($hostName, $userName, $password, $dbName);
           
     // retrieving the movies from databse
-      $sql = "SELECT * FROM movie WHERE removedFlag=0";
+      $sql = "SELECT * FROM movie WHERE removedFlag=0"  ;
       $result = $conn->query($sql);
+
 
 
         
@@ -45,7 +46,7 @@
 
       ?>
       <div class="card">
-         <a href="movie_details.php?id=<?= $movie["id"] ?>">
+         <a href="../views/movie_details.php?id=<?= $movie["id"] ?>">
               <img class="activate" src="<?php echo $movie['postersURL'] ?>" />
             </a>
             <div class="card-content">
