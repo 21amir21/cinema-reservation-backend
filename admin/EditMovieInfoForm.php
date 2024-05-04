@@ -31,11 +31,11 @@
     </div>
     <div class="form-group">
       <label for="backgroundimage">Movie Background Image</label>
-      <input type="text" id="backgroundimage" placeholder="Enter Movie Background Image" name="backgroundimage" value="<?php echo $movie['backgroundImageURL'] ?>" />
+      <input type="file" id="backgroundimage" placeholder="Enter Movie Background Image" name="backgroundimage" value="<?php echo $movie['backgroundImageURL'] ?>" onchange="saveFile()" />
     </div>
     <div class="form-group">
       <label for="trailer">Movie Trailer</label>
-      <input type="text" id="trailer" placeholder="Enter Movie Trailer" name="trailer" />
+      <input type="text" id="trailer" placeholder="Enter Movie Trailer" name="trailer" value="<?php echo $movie['trailerURL'] ?>" />
     </div>
     <div class="form-group">
       <label for="moviename">Movie Name</label>
@@ -47,7 +47,7 @@
     </div>
     <div class="form-group">
       <label for="releasedate">Release Date</label>
-      <input type="text" id="releasedate" placeholder="Enter Movie Release Date" name="releasedate" />
+      <input type="text" id="releasedate" placeholder="Enter Movie Release Date" name="releasedate" value="<?php echo $movie['releaseDate'] ?>" />
     </div>
     <div class="form-group">
       <label for="genre1">Genre 1</label>
@@ -72,7 +72,7 @@
     </div>
     <div class="form-group">
       <label for="runningtime">Running Time</label>
-      <input type="text" id="runningtime" placeholder="Enter Movie Running Time" name="runningtime" />
+      <input type="text" id="runningtime" placeholder="Enter Movie Running Time" name="runningtime" value="<?php echo $movie['runningTime'] ?>" />
     </div>
     <div class="form-group">
       <label for="language">Language</label>
@@ -87,11 +87,11 @@
     </div>
     <div class="form-group">
       <label for="description">Description</label>
-      <textarea id="description" cols="100" rows="7" placeholder="Movie Description" name="description" value="<?php echo $movie['description']; ?>"></textarea>
+      <textarea id="description" cols="100" rows="7" placeholder="Movie Description" name="description"><?php echo $movie['description']; ?></textarea>
     </div>
     <div class="form-group">
       <label for="shortdescription">Short Description</label>
-      <textarea id="shortdescription" cols="100" rows="7" placeholder="Short Description" name="shortdescription" value="<?php echo $movie['shortDescription']; ?>"></textarea>
+      <textarea id="shortdescription" cols="100" rows="7" placeholder="Short Description" name="shortdescription"><?php echo $movie['shortDescription']; ?></textarea>
     </div>
     <div class="form-group">
       <label for="price">Price</label>
@@ -107,6 +107,7 @@
   </form>
 
   <script src="../validations/AddMovieForm.js"></script>
+
 </body>
 
 </html>

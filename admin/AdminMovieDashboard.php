@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="./../includes/footer.css" />
   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
   <script>
-    $(function () {
+    $(function() {
       $("#header").load("../includes/header.php");
       $("#footer").load("../includes/footer.html");
     });
@@ -27,40 +27,40 @@
   <section>
     <h3 class="headers">Current Movies</h3>
     <div class="movie-card-section">
-    <?php
+      <?php
       $hostName = "localhost";
       $userName = "root";
       $password = "2121";
       $dbName = "cinema_reservation_db";
       $conn = new mysqli($hostName, $userName, $password, $dbName);
-          
-    // retrieving the movies from databse
-      $sql = "SELECT * FROM movie WHERE removedFlag=0"  ;
+
+      // retrieving the movies from databse
+      $sql = "SELECT * FROM movie WHERE removedFlag=0";
       $result = $conn->query($sql);
 
 
 
-        
+
       if ($result->num_rows > 0) {
         foreach ($result as $movie) {
 
       ?>
-      <div class="card">
-         <a href="../views/movie_details.php?id=<?= $movie["id"] ?>">
-              <img class="activate" src="<?php echo $movie['postersURL'] ?>" />
+          <div class="card">
+            <a href="../views/movie_details.php?id=<?= $movie["id"] ?>">
+              <img class="activate" src="<?= "../images/" . $movie['postersURL'] ?>" />
             </a>
             <div class="card-content">
-                <p class="movie-name"> <?php echo $movie['name']; ?></p>    
-          <br />
-          <a href="EditMovieInfoForm.php?id=<?= $movie["id"] ?>"><input type="button" value="Edit" class="editmovie" /></a>
-          <a href="removemovirfromdb.php?id=<?= $movie["id"] ?>"><input type="button" value="Remove" class="editmovie" style="margin-left: 80px" /></a> 
-        </div>
-      </div>
+              <p class="movie-name"> <?php echo $movie['name']; ?></p>
+              <br />
+              <a href="EditMovieInfoForm.php?id=<?= $movie["id"] ?>"><input type="button" value="Edit" class="editmovie" /></a>
+              <a href="removemovirfromdb.php?id=<?= $movie["id"] ?>"><input type="button" value="Remove" class="editmovie" style="margin-left: 80px" /></a>
+            </div>
+          </div>
       <?php
         }
       }
       ?>
-      </div>
+    </div>
     </div>
     <!---movie-card--->
 
