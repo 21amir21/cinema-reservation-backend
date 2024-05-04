@@ -23,10 +23,11 @@
               <input
                 type="radio"
                 class="btn-check"
-                name="options-base"
+                name="user-type"
                 id="option5"
                 autocomplete="off"
                 checked
+                value="Customer"
               />
               <label class="btn" for="option5">Customer</label>
             </div>
@@ -34,9 +35,10 @@
               <input
                 type="radio"
                 class="btn-check"
-                name="options-base"
+                name="user-type"
                 id="option6"
                 autocomplete="off"
+                value="Admin"
               />
               <label class="btn" for="option6">Admin</label>
             </div>
@@ -63,6 +65,13 @@
           <a href="">Forgot password?</a>
           <input type="submit" class="button" value="Login" />
           <a href="/"><input type="button" class="button" value="Cancel" /></a>
+          <!-- 5alyy balk mn el 7eta dy  -->
+          <input
+            type="hidden"
+            id="user-type"
+            name="user-type"
+            value="Customer"
+          />
         </form>
         <div class="signup">
           <span class="signup"
@@ -73,5 +82,18 @@
       </div>
     </div>
     <script src="./../validations/login.js"></script>
+    <script>
+      // JavaScript to update the hidden input field with the selected radio button value
+      document.addEventListener("DOMContentLoaded", function () {
+        var radioButtons = document.querySelectorAll(".btn-check");
+        var hiddenInput = document.getElementById("user-type");
+
+        radioButtons.forEach(function (radioButton) {
+          radioButton.addEventListener("click", function () {
+            hiddenInput.value = this.value;
+          });
+        });
+      });
+    </script>
   </body>
 </html>

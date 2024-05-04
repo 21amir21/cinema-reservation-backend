@@ -25,40 +25,88 @@ if (empty($emailAddress)) {
     exit();
 } else {
 
-    $sql = "SELECT * FROM customer WHERE email = '{$emailAddress}' AND password = '{$password}'";
-    $result = mysqli_query($conn, $sql);
+    // new part to know if customer or admin
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Retrieve the value of the selected radio button from the $_POST array
+        $userType = $_POST['user-type'];
 
-    if (mysqli_num_rows($result) === 1) {
+        // Now you can use $userType variable in your logic
+        if ($userType === "Customer") {
+            // Logic for Customer login
+            $sql = "SELECT * FROM customer WHERE email = '{$emailAddress}' AND password = '{$password}'";
+            $result = mysqli_query($conn, $sql);
 
-        $row = mysqli_fetch_assoc($result);
+            if (mysqli_num_rows($result) === 1) {
 
-        if ($row["email"] === $emailAddress && $row["password"] === $password) {
+                $row = mysqli_fetch_assoc($result);
 
-            // Successufull Login!
+                if ($row["email"] === $emailAddress && $row["password"] === $password) {
 
-            $_SESSION["id"] = $row["id"];
-            $_SESSION["firstName"] = $row["firstName"];
-            $_SESSION["lastName"] = $row["lastName"];
-            $_SESSION["email"] = $row["email"];
-            $_SESSION["password"] = $row["password"];
-            $_SESSION["gender"] = $row["gender"];
-            $_SESSION["dob"] = $row["dob"];
+                    // Successufull Login!
+
+                    $_SESSION["id"] = $row["id"];
+                    $_SESSION["firstName"] = $row["firstName"];
+                    $_SESSION["lastName"] = $row["lastName"];
+                    $_SESSION["email"] = $row["email"];
+                    $_SESSION["password"] = $row["password"];
+                    $_SESSION["gender"] = $row["gender"];
+                    $_SESSION["dob"] = $row["dob"];
 
 
-            $_SESSION["customer"] = [
-                "customerName" => $row["firstName"],
-                "customerID" => $row["id"]
-            ];
+                    $_SESSION["customer"] = [
+                        "customerName" => $row["firstName"],
+                        "customerID" => $row["id"]
+                    ];
 
-            header("Location: /");
+                    header("Location: /");
 
-            exit();
-        } else {
-            header("Location: index.php?error=Incorect User name or password");
-            exit();
+                    exit();
+                } else {
+                    header("Location: /?error=Incorect User name or password");
+                    exit();
+                }
+            } else {
+                header("Location: /?error=Incorect User name or password");
+                exit();
+            }
+        } elseif ($userType === "Admin") {
+            // Logic for Admin login
+            $sql = "SELECT * FROM admin WHERE email = '{$emailAddress}' AND password = '{$password}'";
+            $result = mysqli_query($conn, $sql);
+
+            if (mysqli_num_rows($result) === 1) {
+
+                $row = mysqli_fetch_assoc($result);
+
+                if ($row["email"] === $emailAddress && $row["password"] === $password) {
+
+                    // Successufull Login!
+
+                    $_SESSION["id"] = $row["id"];
+                    $_SESSION["firstName"] = $row["firstName"];
+                    $_SESSION["lastName"] = $row["lastName"];
+                    $_SESSION["email"] = $row["email"];
+                    $_SESSION["password"] = $row["password"];
+                    $_SESSION["gender"] = $row["gender"];
+                    $_SESSION["dob"] = $row["dob"];
+
+
+                    $_SESSION["admin"] = [
+                        "adminName" => $row["firstName"],
+                        "adminID" => $row["id"]
+                    ];
+
+                    header("Location: /admin/AdminMovieDashboard.php");
+
+                    exit();
+                } else {
+                    header("Location: /?error=Incorect User name or password");
+                    exit();
+                }
+            } else {
+                header("Location: /?error=Incorect User name or password");
+                exit();
+            }
         }
-    } else {
-        header("Location: index.php?error=Incorect User name or password");
-        exit();
     }
 }
