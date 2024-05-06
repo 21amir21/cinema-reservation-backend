@@ -1,8 +1,9 @@
 /*-----css movie site -----*/
 @font-face {
   font-family: "Ghibli";
-  src: url(./../fonts/Eyad\ Al-Samman\ -\ Ghibli.otf);
+  src: url("/./fonts/Eyad Al-Samman - Ghibli.otf");
 }
+
 body {
   margin: 0px;
   border: 0px;
@@ -13,6 +14,7 @@ body {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
 #main-container {
   display: flex;
   flex-direction: column;
@@ -20,9 +22,11 @@ body {
   height: 100vh;
   width: 100%;
 }
+
 #main-container a {
   align-self: center;
 }
+
 #screen {
   align-content: center;
   height: 20px;
@@ -37,6 +41,7 @@ body {
   color: white;
   /* background: rgb(0, 0, 0); */
 }
+
 #seats-container {
   height: 500px;
   width: 700px;
@@ -49,6 +54,7 @@ body {
   background-color: rgb(180, 214, 251);
   /* background-blend-mode: lighten; */
 }
+
 .seats {
   height: 35px;
   width: 35px;
@@ -58,23 +64,27 @@ body {
   background-color: black;
   transition: background 0.3s;
 }
+
 .seats:hover {
   border: 1px solid rgb(93, 93, 93);
   box-shadow: 2px 2px 2px white, 2px -2px 2px white, -2px 2px 2px white, -2px -2px 2px white;
   background: #4da0ff;
 }
+
 .seats.selected {
   background-color: #146fef;
   opacity: 0.8;
   border: 2px solid #0066f5;
   box-shadow: 2px 2px 2px #66a4fc, 2px -2px 2px #4b96ff, -2px 2px 2px #2f85fe, -2px -2px 2px #559afb;
 }
+
 .seats.booked {
   background-color: #333;
   opacity: 0.8;
   border: 2px solid #000;
   box-shadow: 2px 2px 2px #666, 2px -2px 2px #444, -2px 2px 2px #222, -2px -2px 2px #555;
 }
+
 #row0,
 #row1,
 #row2,
@@ -84,6 +94,7 @@ body {
   display: flex;
   justify-content: space-between;
 }
+
 .book {
   font-family: "Ghibli";
   margin-top: 30px;
@@ -97,6 +108,7 @@ body {
   border-radius: 15px;
   transition: color 0.3s, background 0.3s;
 }
+
 .book:hover {
   color: white;
   background: #338bde;

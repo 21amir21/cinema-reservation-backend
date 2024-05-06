@@ -41,7 +41,7 @@
           <a href="/views/what's_on.php" class="nav-link dropdown-toggle">Movies</a>
           <ul class="dropdown-menu">
             <li><a href="/views/what's_on.php">What's On</a></li>
-            <li><a href="/views/comingSoon.html">Coming Soon</a></li>
+            <li><a href="/views/comingSoon.php">Coming Soon</a></li>
           </ul>
         </li>
         <li><a href="/views/offers.php">Offers</a></li>

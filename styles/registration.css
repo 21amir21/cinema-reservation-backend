@@ -1,8 +1,9 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap"); */
 @font-face {
   font-family: "Ghibli";
-  src: url(./../fonts/Eyad\ Al-Samman\ -\ Ghibli.otf);
+  src: url("/./fonts/Eyad Al-Samman - Ghibli.otf");
 }
+
 * {
   margin: 0;
   padding: 0;
