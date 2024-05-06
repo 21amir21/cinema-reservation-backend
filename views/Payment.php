@@ -16,6 +16,7 @@
 
   $id = $_GET['id'];
   $encodedIds = $_GET['seats'];
+  $theatreID = $_GET['theatreID'];
 
   $hostName = "localhost";
   $userName = "root";
@@ -29,7 +30,8 @@
 ?>
 
 <body>
-<form id="submit-form" method="POST" action="../data/payment.php?id=<?= $id ?>&seats=<?= $encodedIds ?>">
+<form id="submit-form" method="POST"
+      action="../data/payment.php?id=<?= $id ?>&seats=<?= $encodedIds ?>&theatreID=<?= $theatreID ?>">
   <h2>Personal Information</h2>
   <div class="form-group">
     <label for="firstname">First Name *</label>

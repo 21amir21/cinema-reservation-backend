@@ -41,6 +41,7 @@
   }
 
   $movieID = $_GET['id'];
+  $theatreID = $_GET['theatreID'];
   $encodedSeats = $_GET['seats'];
   $seats = json_decode($encodedSeats);
 
@@ -54,10 +55,10 @@
 
   $moviePrice = $moviePriceRow['price'];
 
-  $totalPrice = $moviePrice * sizeof($seats) * (1 - $offerPercentage);
+  $totalPrice = $moviePrice * sizeof($seats) * $offerPercentage;
 
   foreach ($seats as $seat) {
-    $seatSql = "UPDATE seat SET reserved = 1 WHERE id = $seat";
+    $seatSql = "UPDATE seat SET reserved = 1 WHERE id = $seat AND theatreID = $theatreID";
     $conn->query($seatSql);
   }
 
