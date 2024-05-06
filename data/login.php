@@ -61,10 +61,12 @@ if (empty($emailAddress)) {
                     header("Location: /");
                     exit();
                 } else {
-                    echo '<script>alert("Incorrect User name or password");</script>';
+                    header("Location: /views/login.html");
+                    exit();
                 }
             } else {
-                echo '<script>alert("Incorrect User name or password");</script>';
+                header("Location: /views/login.html");
+                exit();
             }
         } elseif ($userType === "Admin") {
             // Logic for Admin login
@@ -97,10 +99,12 @@ if (empty($emailAddress)) {
 
                     exit();
                 } else {
-                    echo '<script>alert("Incorrect User name or password");</script>';
+                    header("Location: /views/login.html");
+                    exit();
                 }
             } else {
-                echo '<script>alert("Incorrect User name or password");</script>';
+                header("Location: /views/login.html");
+                exit();
             }
         }
     }
