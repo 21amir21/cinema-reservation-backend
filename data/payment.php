@@ -9,19 +9,32 @@
   $dbName = "cinema_reservation_db";
   $conn = new mysqli($hostName, $userName, $password, $dbName);
 
-  file_put_contents("log.txt", "");
-
-  $offerCode = $_POST["offercode"];
   $offerPercentage = 1;
-  if ($offerCode != "") {
-    file_put_contents("log.txt", "offer code is not empty\n");
-    $offerSql = "SELECT offerPercentage FROM offer WHERE offerCode = '$offerCode'";
-    $row = $conn->query($offerSql);
-    if (mysqli_num_rows($row) !== 0) {
-      file_put_contents("log.txt", "offer code exists\n");
-      $offerRow = mysqli_fetch_assoc($row);
-      $offerPercentage = $offerRow['offerPercentage'];
-      file_put_contents("log.txt", "percentage is $offerPercentage\n");
+  if (isset($_POST['offerCode'])) {
+    $offerCode = validate($_POST["offerCode"]);
+
+    if (isset($_SESSION["customer"])) {
+      $customerId = $_SESSION["customer"]["customerID"];
+      $doesOfferExistSql = "SELECT * FROM customeroffer WHERE customerId = $customerId AND offerCode = $offerCode";
+      $row = $conn->query($doesOfferExistSql);
+      // if the customer already used the code
+      if (mysqli_num_rows($row) !== 0) {
+        $_SESSION['redirected'] = true;
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        exit();
+      } else {
+        $addOfferAndCustomerToDatabase = "INSERT INTO customeroffer VALUES ($customerId, $offerCode)";
+        $conn->query($addOfferAndCustomerToDatabase);
+      }
+    }
+
+    if ($offerCode !== "") {
+      $offerSql = "SELECT offerPercentage FROM offer WHERE offerCode = '$offerCode'";
+      $row = $conn->query($offerSql);
+      if (mysqli_num_rows($row) !== 0) {
+        $offerRow = mysqli_fetch_assoc($row);
+        $offerPercentage = $offerRow['offerPercentage'];
+      }
     }
   }
 
@@ -39,9 +52,7 @@
 
   $moviePrice = $moviePriceRow['price'];
 
-  file_put_contents("log.txt", "percentage is $offerPercentage\n");
-  $totalPrice = $moviePrice * sizeof($seats) * $offerPercentage;
-  file_put_contents("log.txt", "total price is $totalPrice\n");
+  $totalPrice = $moviePrice * sizeof($seats) * (1 - $offerPercentage);
 
   foreach ($seats as $seat) {
     $seatSql = "UPDATE seat SET reserved = 1 WHERE id = $seat";

@@ -12,6 +12,8 @@
 </head>
 
 <?php
+  session_start();
+
   $id = $_GET['id'];
   $encodedIds = $_GET['seats'];
 
@@ -66,7 +68,7 @@
     </div>
     <div class="form-group">
       <label for="offercode">Offer Code</label>
-      <input type="text" id="offercode" placeholder="Enter Offer Code if any"/>
+      <input type="text" id="offercode" name="offerCode" placeholder="Enter Offer Code if any"/>
     </div>
     <div class="form-group">
       <label for="movieName">Movie: <?php echo $movie['name'] ?></label>
@@ -78,6 +80,13 @@
   </div>
 </form>
 
+<?php
+  if (isset($_SESSION['redirected']) && $_SESSION['redirected'] == true) {
+    echo '<script>alert("That code has already been used")</script>';
+    // unset or reset the session variable if needed
+    unset($_SESSION['redirected']);
+  }
+?>
 <script src="./../validations/paymentForm.js"></script>
 </body>
 
