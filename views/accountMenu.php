@@ -62,7 +62,7 @@
             <img src="<?= "../images/" . $movie['postersURL']; ?>" class="card-img-top" alt="Movie Poster" />
             <div class="card-body" style="align-content: center; color: #013e48">
               <h5 class="card-title"><b><?php echo $movie['name']; ?></b></h5>
-              <li class="card-text" style="list-style-type: none">Price: <?php echo $movie['price']; ?>$</li>
+              <li class="card-text" style="list-style-type: none">Price: <?php echo $movie['paymentAmount']; ?>$</li>
               <li class="card-text" style="list-style-type: none">Date: <?php echo $movie['releaseDate']; ?></li>
             </div>
           </div>
