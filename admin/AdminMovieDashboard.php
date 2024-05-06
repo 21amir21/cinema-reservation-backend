@@ -67,6 +67,7 @@
     <div class="show">
       <div class="show-bar"></div>
       <a href="./AddMovieForm.html"><button class="addmovie">Add Movie</button></a>
+      <a href="./Addcomingsoon.html"><button class="addmovie">Add Coming Soon Movie</button></a>
     </div>
   </section>
   <div id="footer"></div>

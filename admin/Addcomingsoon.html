@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./AddMovieForm.css" />
+    <title>Add Coming Soon Movie</title>
+</head>
+
+<body>
+    <form id="submit-form" action="addcomingsoon.php" method="POST">
+        <h2>Add Coming Soon Movie Details</h2>
+        <div class="form-group">
+            <label for="poster">Movie Poster</label>
+            <input type="text" id="poster" placeholder="Enter Movie Poster" name="poster" />
+        </div>
+
+        <div class="form-group">
+            <label for="moviename">Movie Name</label>
+            <input type="text" id="moviename" placeholder="Enter Movie Name" name="moviename" />
+        </div>
+        <div class="form-group">
+            <label for="releasedate">Release Date</label>
+            <input type="date" id="releasedate" placeholder="Enter Movie Release Date" name="releasedate" />
+        </div>
+        <div class="form-group confirm_details-btn">
+            <input type="submit" value="Confirm Movie Details" id="confirm-btn" />
+        </div>
+        <div class="form-group confirm_details-btn">
+            <a href="./AdminMovieDashboard.php"><input type="button" value="Cancel" id="cancel-btn" /></a>
+        </div>
+    </form>
+
+    <script src="addcomingsoon.js"></script>
+</body>
+
+</html>
