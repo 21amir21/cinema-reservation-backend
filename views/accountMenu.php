@@ -45,7 +45,7 @@
     $dbName = "cinema_reservation_db";
     $conn = new mysqli($hostName, $userName, $password, $dbName);
 
-    $query = "SELECT movie.postersURL, movie.name, movie.price, movie.releaseDate 
+    $query = "SELECT movie.postersURL, movie.name, payment.paymentAmount, movie.releaseDate 
     FROM movie 
     INNER JOIN payment ON movie.id = payment.movieId 
     WHERE payment.customerId = $custID";
