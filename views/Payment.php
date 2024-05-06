@@ -30,7 +30,7 @@
 
 <body>
 <form id="submit-form" method="POST" action="../data/payment.php?id=<?= $id ?>&seats=<?= $encodedIds ?>">
-  <h2>Payment Details</h2>
+  <h2>Personal Information</h2>
   <div class="form-group">
     <label for="firstname">First Name *</label>
     <input type="text" id="firstname" placeholder="Enter your First Name"/>
@@ -53,7 +53,7 @@
   </div>
 
   <div class="payment-form">
-    <h2>Card Details</h2>
+    <h2>Payment Details</h2>
     <div class="form-group">
       <label for="cardnumber">Card Number *</label>
       <input type="text" id="cardnumber" placeholder="**** **** **** ****"/>
