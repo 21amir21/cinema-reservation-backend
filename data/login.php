@@ -61,12 +61,16 @@ if (empty($emailAddress)) {
                     header("Location: /");
                     exit();
                 } else {
-                    header("Location: /views/login.html");
-                    exit();
+                    // header("Location: /views/login.html");
+                    // exit();
+                    $_SESSION['redirected'] = true;
+                    header('Location: ' . $_SERVER['HTTP_REFERER']);
                 }
             } else {
-                header("Location: /views/login.html");
-                exit();
+                // header("Location: /views/login.html");
+                // exit();
+                $_SESSION['redirected'] = true;
+                header('Location: ' . $_SERVER['HTTP_REFERER']);
             }
         } elseif ($userType === "Admin") {
             // Logic for Admin login
@@ -99,12 +103,12 @@ if (empty($emailAddress)) {
 
                     exit();
                 } else {
-                    header("Location: /views/login.html");
-                    exit();
+                    $_SESSION['redirected'] = true;
+                    header('Location: ' . $_SERVER['HTTP_REFERER']);
                 }
             } else {
-                header("Location: /views/login.html");
-                exit();
+                $_SESSION['redirected'] = true;
+                header('Location: ' . $_SERVER['HTTP_REFERER']);
             }
         }
     }
