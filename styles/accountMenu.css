@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Ghibli";
-  src: url(./../fonts/Eyad\ Al-Samman\ -\ Ghibli.otf);
+  src: url("/./fonts/Eyad Al-Samman - Ghibli.otf");
 }
 
 * {
@@ -202,9 +202,11 @@ form .password i {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
+
 .back-to-top:focus {
   color: #fff;
 }
+
 .back-to-top.show {
   bottom: 40px;
   right: 40px;
@@ -213,11 +215,13 @@ form .password i {
   -ms-transform: scale(1);
   transform: scale(1);
 }
+
 .back-to-top.show:hover {
   color: #fff;
   bottom: 30px;
   opacity: 1;
 }
+
 .arrow {
   background-image: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PHN0eWxlPi5zdDB7ZmlsbDojZmZmfTwvc3R5bGU+PHBhdGggY2xhc3M9InN0MCIgZD0iTTMxOS4xIDIxN2MyMC4yIDIwLjIgMTkuOSA1My4yLS42IDczLjdzLTUzLjUgMjAuOC03My43LjZsLTE5MC0xOTBjLTIwLjEtMjAuMi0xOS44LTUzLjIuNy03My43UzEwOSA2LjggMTI5LjEgMjdsMTkwIDE5MHoiLz48cGF0aCBjbGFzcz0ic3QwIiBkPSJNMzE5LjEgMjkwLjVjMjAuMi0yMC4yIDE5LjktNTMuMi0uNi03My43cy01My41LTIwLjgtNzMuNy0uNmwtMTkwIDE5MGMtMjAuMiAyMC4yLTE5LjkgNTMuMi42IDczLjdzNTMuNSAyMC44IDczLjcuNmwxOTAtMTkweiIvPjwvc3ZnPg==);
   position: absolute;
@@ -228,6 +232,7 @@ form .password i {
   top: 30%;
   left: 40%;
 }
+
 .arrow:nth-child(2) {
   top: 42%;
 }
@@ -257,6 +262,7 @@ form .password i {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
+
 .back-to-top:hover .arrow:nth-child(2) {
   animation-name: bounceAlpha;
   animation-duration: 1.4s;
@@ -271,13 +277,16 @@ form .password i {
     height: 40px;
     line-height: 40px;
   }
+
   .back-to-top.show {
     bottom: 10px;
     right: 10px;
   }
+
   .back-to-top.show:hover {
     bottom: 10px;
   }
+
   .arrow {
     top: 27%;
     left: 37%;

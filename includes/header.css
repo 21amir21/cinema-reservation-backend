@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Ghibli";
-  src: url(./../fonts/Eyad\ Al-Samman\ -\ Ghibli.otf);
+  src: url("/./fonts/Eyad Al-Samman - Ghibli.otf");
 }
 
 header {
@@ -142,6 +142,7 @@ header nav .fa:hover {
   border-radius: 5px;
   transition: box-shadow 0.3s ease; /* Add transition effect for box-shadow */
 }
+
 .login-btn:hover {
   box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.5); /* Add white box-shadow on hover */
 }
