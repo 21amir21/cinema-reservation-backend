@@ -17,7 +17,7 @@ const handleFormData = (e) => {
   e.preventDefault();
 
   // Retrieving input elements
-  const fullnameInput = document.getElementById("fullname");
+  const fullnameInput = document.getElementById("firstName");
   const emailInput = document.getElementById("email");
   const dateInput = document.getElementById("date");
   const genderInput = document.getElementById("gender");
