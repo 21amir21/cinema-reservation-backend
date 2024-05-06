@@ -39,11 +39,11 @@ function validatePrevious() {
 
   // Clearing previous error messages
   document
-      .querySelectorAll(".form-group .error")
-      .forEach((field) => field.classList.remove("error"));
+    .querySelectorAll(".form-group .error")
+    .forEach((field) => field.classList.remove("error"));
   document
-      .querySelectorAll(".error-text")
-      .forEach((errorText) => errorText.remove());
+    .querySelectorAll(".error-text")
+    .forEach((errorText) => errorText.remove());
 
   // Performing validation checks
   if (firstname === "") {
@@ -86,11 +86,11 @@ const handleFormData = (e) => {
 
   // Clearing previous error messages
   document
-      .querySelectorAll(".form-group .error")
-      .forEach((field) => field.classList.remove("error"));
+    .querySelectorAll(".form-group .error")
+    .forEach((field) => field.classList.remove("error"));
   document
-      .querySelectorAll(".error-text")
-      .forEach((errorText) => errorText.remove());
+    .querySelectorAll(".error-text")
+    .forEach((errorText) => errorText.remove());
 
   // Performing validation checks
 
@@ -103,7 +103,7 @@ const handleFormData = (e) => {
   if (!cardsecurtycodePattern.test(cardsecuritycode)) {
     showError(cardsecuritycodeInput, "Enter a valid card security code");
   }
-  if (!(offercode === "" || offercode === "Offer4")) {
+  if (!(offercode === "234" || offercode === "567" || offercode === "")) {
     showError(offercodeInput, "Enter a valid offer code");
   }
 
