@@ -126,6 +126,7 @@
         </div>
         <div class="form-group submit-btn">
           <input type="submit" value="Update" />
+          <button class="DeleteBtn"><a href="/data/delete_account.php">Delete Account</a></button>
         </div>
       </form>
     </div>
