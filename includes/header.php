@@ -64,7 +64,7 @@
       } else {
         // Display login and sign up buttons
         echo '<div class="sign-in-up">
-            <a href="/views/login.html"><button class="login-btn">Login</button></a>
+            <a href="/views/login.php"><button class="login-btn">Login</button></a>
             <a href="/views/registration.html"><button class="login-btn">Sign Up</button></a>
           </div>';
       }
