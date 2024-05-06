@@ -30,7 +30,9 @@
   </script>
   <header>
     <nav>
-      <p class="logo"></p>
+      <a href="/">
+        <p class="logo"></p>
+      </a>
       &nbsp;
       <i class="fa fa-bars" id="menu"></i>
 
@@ -69,8 +71,6 @@
           </div>';
       }
       ?>
-      <div>
-        <img id="pazas-logo" src="./../images/pazas3.png" alt="" />
-      </div>
+     
     </nav>
   </header>
