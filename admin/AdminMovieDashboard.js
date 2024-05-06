@@ -1,6 +1,5 @@
 // put the on hover for the button here bad fel css
 $(document).ready(function () {
-  alert("Welcome Admin");
   // edit button
   $(".editmovie").hover(
     function () {
