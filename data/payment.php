@@ -13,22 +13,24 @@
   if (isset($_POST['offerCode'])) {
     $offerCode = validate($_POST["offerCode"]);
 
-    if (isset($_SESSION["customer"])) {
-      $customerId = $_SESSION["customer"]["customerID"];
-      $doesOfferExistSql = "SELECT * FROM customeroffer WHERE customerId = $customerId AND offerCode = $offerCode";
-      $row = $conn->query($doesOfferExistSql);
-      // if the customer already used the code
-      if (mysqli_num_rows($row) !== 0) {
-        $_SESSION['redirected'] = true;
-        header('Location: ' . $_SERVER['HTTP_REFERER']);
-        exit();
-      } else {
-        $addOfferAndCustomerToDatabase = "INSERT INTO customeroffer VALUES ($customerId, $offerCode)";
-        $conn->query($addOfferAndCustomerToDatabase);
-      }
-    }
-
     if ($offerCode !== "") {
+
+      if (isset($_SESSION["customer"])) {
+        $customerId = $_SESSION["customer"]["customerID"];
+        $doesOfferExistSql = "SELECT * FROM customeroffer WHERE customerId = $customerId AND offerCode = $offerCode";
+        $row = $conn->query($doesOfferExistSql);
+        // if the customer already used the code
+        if (mysqli_num_rows($row) !== 0) {
+          $_SESSION['redirected'] = true;
+          header('Location: ' . $_SERVER['HTTP_REFERER']);
+          exit();
+        } else {
+          $addOfferAndCustomerToDatabase = "INSERT INTO customeroffer VALUES ($customerId, $offerCode)";
+          $conn->query($addOfferAndCustomerToDatabase);
+        }
+      }
+
+
       $offerSql = "SELECT offerPercentage FROM offer WHERE offerCode = '$offerCode'";
       $row = $conn->query($offerSql);
       if (mysqli_num_rows($row) !== 0) {
