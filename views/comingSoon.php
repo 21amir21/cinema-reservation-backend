@@ -39,8 +39,10 @@
 
       ?>
         <div class="card">
-          <img src="<?= "../images/" . $movie['postersURL']; ?>" />
-          <div class="card-content">
+          <a href="">
+              <img class="activate" src="<?= "../images/" . $movie['posterURL'] ?>" />
+            </a>          
+            <div class="card-content">
             <p class="movie-name"><?php echo $movie['name']; ?></p>
             <br />
             <text style="margin-left: 7%"><?php echo $movie['releaseDate']; ?></text>
