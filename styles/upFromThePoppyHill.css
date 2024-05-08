@@ -15,7 +15,7 @@ body {
   font-family: "Roboto", sans-serif;
   overflow: hidden;
   overflow-y: scroll;
-  background-image: url(./../images/Background2.jpg);
+  /* background-image: url(./../images/Background2.jpg); */
   background-repeat: no-repeat;
   background-size: 100%;
   width: 100%;
